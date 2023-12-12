@@ -1,0 +1,13 @@
+{
+  "id": "mig_cla9lck3k13b86faej50",
+  "parentID": "mig_cla9lbk3k13b86faej40",
+  "checksum": "1:839c0c71845809cc56a4740a4cf70fd8b058045eb9909288963e5916629eb08d",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "cons",
+        "table": "Posts"
+      }
+    }
+  ]
+}

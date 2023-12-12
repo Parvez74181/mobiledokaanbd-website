@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3i25ds5tnm04i8mg",
+  "parentID": "mig_cl9g3gi5ds5tnm04i8lg",
+  "checksum": "1:538a80ad4a7251fdc2bb82f217de7b192c1e028efdc8baf51cc3938419664fa4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "camera_features",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

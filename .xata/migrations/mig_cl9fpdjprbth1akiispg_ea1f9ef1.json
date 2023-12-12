@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fpdjprbth1akiispg",
+  "parentID": "mig_cl9fp6q5ds5tnm04i810",
+  "checksum": "1:ea1f9ef194bc9b02e2c255b9e2638715b107f2714bb1e992e84165d6f6b1e8ff",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "3-5-mm-jack",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

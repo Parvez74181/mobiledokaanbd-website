@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fna3prbth1akiirfg",
+  "parentID": "mig_cl9fn8bprbth1akiireg",
+  "checksum": "1:cae14b5f8565aec12db75b87e0633b058d1ee5bbe17270d00715a7f56af9c121",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Build",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

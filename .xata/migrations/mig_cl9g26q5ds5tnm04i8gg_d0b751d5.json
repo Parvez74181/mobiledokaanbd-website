@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g26q5ds5tnm04i8gg",
+  "parentID": "mig_cl9g24q5ds5tnm04i8fg",
+  "checksum": "1:d0b751d5bb8811e54bb13c51a145fd4e8cd1faea31ffff5240767e181d3be4e3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "speed",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

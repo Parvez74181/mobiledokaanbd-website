@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqabprbth1akiistg",
+  "parentID": "mig_cl9fq825ds5tnm04i820",
+  "checksum": "1:fc1ac0375436e989211a155a303ec1cec2719cbaeab8f6c989552ccd3e706ec7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "FM-radio",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

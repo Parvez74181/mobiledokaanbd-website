@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fp1q5ds5tnm04i7r0",
+  "parentID": "mig_cl9fp0k3k13b86faad5g",
+  "checksum": "1:22b7f7e60c078932f6a4866cb287a1621e955bb4e0e30e5ec3926fbbf9d4b609",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Video",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

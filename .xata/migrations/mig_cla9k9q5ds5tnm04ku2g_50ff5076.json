@@ -1,0 +1,14 @@
+{
+  "id": "mig_cla9k9q5ds5tnm04ku2g",
+  "parentID": "mig_cl9mt7jprbth1akijnf0",
+  "checksum": "1:50ff5076a9f137e34a6c111e2217f44285378d9a2feee61cde8889f5bdb6235b",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "battery_types",
+        "oldName": "battery_type",
+        "table": "Posts"
+      }
+    }
+  ]
+}

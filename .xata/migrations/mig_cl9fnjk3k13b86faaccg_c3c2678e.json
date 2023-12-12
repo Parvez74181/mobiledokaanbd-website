@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fnjk3k13b86faaccg",
+  "parentID": "mig_cl9fngjprbth1akiirhg",
+  "checksum": "1:c3c2678e2619860059ea9e2ed3e819b81f9203b26480fa1147fb59741f32f265",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Multitouch",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

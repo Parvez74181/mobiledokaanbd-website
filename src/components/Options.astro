@@ -1,0 +1,1122 @@
+---
+import { Image } from "astro:assets";
+import listIcon from "../../public/list-icon.svg";
+import gridIcon from "../../public/grid-icon.svg";
+import dropdownIcon from "../../public/dropdown-icon.svg";
+---
+
+<div class="my-3 flex items-center justify-between">
+  <!-- display-options -->
+  <div class="display-options flex gap-4 items-center">
+    <span><strong>Display:</strong></span>
+    <Image
+      src={listIcon}
+      alt="list-icon"
+      class="list-icon cursor-pointer p-2 hover:bg-green-100"
+      height={40}
+      width={40}
+    />
+    <Image
+      src={gridIcon}
+      alt="grid-icon"
+      class="grid-icon cursor-pointer p-2 hover:bg-green-100"
+      height={40}
+      width={40}
+    />
+  </div>
+</div>
+
+<!-- filter options -->
+<div class="filter-options-container">
+  <!-- filter btn -->
+  <button
+    id="filterBtn"
+    class="my-3 p-2 border flex justify-center items-center gap-2 bg-gray-100"
+  >
+    Filters
+    <Image src={dropdownIcon} height={15} width={15} alt="dropdownicon" />
+  </button>
+
+  <!-- filter options -->
+  <form method="post" class="filter-options hidden border bg-gray-50 p-4 pr-6">
+    <ul class="aps-filters-list">
+      <li>
+        <h5>Battery</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="1001-1500-mah"
+          />
+          <span class="aps-cb-holder aps-cb-active"
+            ><i class="aps-icon-check"></i></span
+          > 1001 - 1500 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="1501-2000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           1501 - 2000 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="2001-3000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           2001 - 3000 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="3001-4000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           3001 - 4000 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="4001-5000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           4001 - 5000 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="above-5000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 5000 mAh
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="battery"
+            value="under-1000-mah"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 1000 mAh
+        </label>
+      </li>
+      <li>
+        <h5>Back Camera</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="2mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           2MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="5mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           5MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="8mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           8MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="12mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           12MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="13mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           13MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="16mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           16MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="20mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           20MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="24mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           24MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="32mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           32MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="48mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           48MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="64mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           64MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="above-64mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 64MP
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="camera"
+            value="under-1mp"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 1MP
+        </label>
+      </li>
+      <li>
+        <h5>Connectivity</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="greentooth"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           greentooth
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="fm-radio"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> FM
+          Radio
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="gps"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           GPS
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="hdmi"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           HDMI
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="infrared"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Infrared
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="nfc"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           NFC
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="connectivity"
+            value="usb-type-c"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           USB Type-C
+        </label>
+      </li>
+      <li>
+        <h5>CPU</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="1-1-1-5-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           1.1 - 1.5 GHz
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="1-6-2-0-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           1.6 - 2.0 GHz
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="2-1-2-5-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           2.1 - 2.5 GHz
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="2-6-3-0-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           2.6 - 3.0 GHz
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="above-3-0-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 3.0 GHz
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="cpu"
+            value="under-1-0-ghz"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 1.0 GHz
+        </label>
+      </li>
+      <li>
+        <h5>Display</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="4-1-5-0-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           4.1 - 5.0 inches
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="5-1-6-0-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           5.1 - 6.0 inches
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="6-1-7-0-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           6.1 - 7.0 inches
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="7-1-10-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           7.1 - 10 inches
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="above-10-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 10 inches
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="display"
+            value="under-4-inches"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 4 inches
+        </label>
+      </li>
+      <li>
+        <h5>Network</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="network"
+            value="2g"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 2G
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="network"
+            value="3-5g"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           3.5G
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="network"
+            value="3g"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 3G
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="network"
+            value="4g"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 4G
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="network"
+            value="5g"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 5G
+        </label>
+      </li>
+      <li>
+        <h5>OS</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="os"
+            value="android"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Android
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="os"
+            value="harmonyos"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           HarmonyOS
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="os"
+            value="symbian"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Symbian
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="os"
+            value="windows-phone"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Windows Phone
+        </label>
+        <label>
+          <input type="checkbox" class="aps-filter-cb" name="os" value="ios" />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           iOS
+        </label>
+      </li>
+      <li>
+        <h5>Price</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="5001-10000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           5,001 - 10,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="10001-15000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           10,001 - 15,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="15001-20000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           15,001 - 20,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="20001-30000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           20,001 - 30,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="30001-40000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           30,001 - 40,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="40001-50000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           40,001 - 50,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="50001-60000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           50,001 - 60,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="60001-70000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           60,001 - 70,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="70001-80000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           70,001 - 80,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="80001-90000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           80,001 - 90,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="90001-100000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           90,001 - 1,00,000 Tk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="above-100000"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 1,00,000
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="price"
+            value="under-5000-tk"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 5,000 Tk
+        </label>
+      </li>
+      <li>
+        <h5>RAM</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="1-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 1 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="2-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 2 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="3-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 3 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="4-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 4 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="6-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 6 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="8-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 8 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="12-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 12
+          GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="512-mb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           512 MB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="above-12-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 12 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="ram"
+            value="under-256-mb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 256 MB
+        </label>
+      </li>
+      <li>
+        <h5>Sensors</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="accelerometer"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Accelerometer
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="brometer"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Brometer
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="compass"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Compass
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="fingerprint"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Fingerprint
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="gyro"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Gyro
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="heart-rate"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Heart Rate
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="humidity"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Humidity
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="proximity"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Proximity
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sensors"
+            value="temperature"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Temperature
+        </label>
+      </li>
+      <li>
+        <h5>SIM</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sim"
+            value="dual-sim"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Dual SIM
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sim"
+            value="quad-sim"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Quad SIM
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sim"
+            value="single-sim"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Single SIM
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="sim"
+            value="triple-sim"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Triple SIM
+        </label>
+      </li>
+      <li>
+        <h5>Storage</h5>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="1-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 1 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="2-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 2 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="4-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 4 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="8-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 8 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="16-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 16
+          GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="32-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 32
+          GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="64-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span> 64
+          GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="128-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           128 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="256-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           256 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="512-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           512 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="512-mb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           512 MB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="above-512-gb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Above 512 GB
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            class="aps-filter-cb"
+            name="storage"
+            value="under-256-mb"
+          />
+          <span class="aps-cb-holder"><i class="aps-icon-check"></i></span>
+           Under 256 MB
+        </label>
+      </li>
+    </ul>
+
+    <div class="relative flex justify-between items-center w-full mt-[5px]">
+      <!-- clear all btn -->
+      <div
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 flex justify-between items-center gap-2 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          class="w-4 h-4"
+          ><path
+            fill="none"
+            stroke="white"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="42"
+            d="M368 368L144 144M368 144L144 368"></path></svg
+        >
+        <span>Clear All</span>
+      </div>
+
+      <!-- search by filter btn -->
+      <button
+        type="submit"
+        class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800 flex justify-between items-center gap-2 cursor-pointer"
+      >
+        <svg
+          class="w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
+        </svg>
+        <sapn> Search</sapn>
+      </button>
+    </div>
+  </form>
+</div>
+<style>
+  h5 {
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  label {
+    margin: 5px;
+  }
+</style>
+<script async defer>
+  window.addEventListener("DOMContentLoaded", () => {
+    const gridIocn = document.querySelector(".grid-icon");
+    const listIocn = document.querySelector(".list-icon");
+    const wrapper = document.querySelector(".wrapper");
+    const filterOptionsBox = document.querySelector(".filter-options");
+    const filterOptionsBtn = document.querySelector("#filterBtn");
+
+    filterOptionsBtn.addEventListener("click", () => {
+      filterOptionsBox.classList.toggle("hidden");
+    });
+
+    listIocn.addEventListener("click", () => {
+      wrapper.classList.remove(
+        "grid-cols-2",
+        "md:grid-cols-3",
+        "xl:grid-cols-4"
+      );
+      wrapper.classList.add("list-view");
+    });
+
+    gridIocn.addEventListener("click", () => {
+      wrapper.classList.add("grid-cols-2", "md:grid-cols-3", "xl:grid-cols-4");
+      wrapper.classList.remove("list-view");
+    });
+  });
+</script>

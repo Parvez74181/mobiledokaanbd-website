@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<rect x="166" y="166" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 668 156)" fill="#EDEFF1" width="180" height="492"/>
+		</g>
+		<g>
+			<rect x="342" y="342" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 824 824)" fill="#80D6FB" width="140" height="140"/>
+		</g>
+		<g>
+			<rect x="162" y="342" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 464 824)" fill="#46BEE8" width="140" height="140"/>
+		</g>
+	</g>
+	<g>
+		<polygon fill="#EDEFF1" points="190,477.583 468,199.583 340.721,72.305 190,223.025 		"/>
+	</g>
+	<g>
+		<g>
+			
+				<rect x="270.721" y="129.584" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 722.7737 99.7847)" fill="#FFE352" width="140" height="140"/>
+		</g>
+		<g>
+			
+				<rect x="143.442" y="256.863" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 595.4945 407.0639)" fill="#FFB236" width="140" height="140"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="10" y="10" fill="#EDEFF1" width="180" height="492"/>
+		</g>
+		<g>
+			
+				<rect x="30" y="30" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 200 1.421085e-14)" fill="#FFB0AA" width="140" height="140"/>
+		</g>
+		<g>
+			<rect x="30" y="210" fill="#FF7B7B" width="140" height="140"/>
+		</g>
+		<g>
+			<circle fill="#D3D3D3" cx="100" cy="440" r="30"/>
+		</g>
+	</g>
+</g>
+</svg>

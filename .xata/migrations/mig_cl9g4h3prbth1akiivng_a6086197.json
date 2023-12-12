@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g4h3prbth1akiivng",
+  "parentID": "mig_cl9g4es3k13b86faaes0",
+  "checksum": "1:a6086197860adf38881a040b965f68e7d2eccba33ebfa79eb57ac041674244c6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "messaging",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g5e3prbth1akiivsg",
+  "parentID": "mig_cl9g5c43k13b86faaev0",
+  "checksum": "1:eb4a5d7b231914bd44ca68e85350331c8b60d95c4847f8579feebf366b1826ba",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "highlights",
+          "type": "text"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

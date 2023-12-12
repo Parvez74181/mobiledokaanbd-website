@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fmti5ds5tnm04i77g",
+  "parentID": "mig_cl9fmrq5ds5tnm04i76g",
+  "checksum": "1:56603ff44049bfc26d197d104ac38097252662a52cc345fe9e9fb694091e7dcc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "5G-bands",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

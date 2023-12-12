@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g1pk3k13b86faaed0",
+  "parentID": "mig_cl9g1mk3k13b86faaec0",
+  "checksum": "1:10f8274661d019df2f744f0fc7e289e27174c6e688870097a788f2efd312fc27",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "technology",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

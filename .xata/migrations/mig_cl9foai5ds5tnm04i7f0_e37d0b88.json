@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9foai5ds5tnm04i7f0",
+  "parentID": "mig_cl9fo73prbth1akiirv0",
+  "checksum": "1:e37d0b880148d5c5dbb9adc24c44dc8ff1f251ee96ede09d79810f98f90c54d5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Card-slot",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

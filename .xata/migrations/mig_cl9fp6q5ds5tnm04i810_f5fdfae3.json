@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fp6q5ds5tnm04i810",
+  "parentID": "mig_cl9fp4rprbth1akiisog",
+  "checksum": "1:f5fdfae3cc68467ddc60f8dbe5ced85141e6b2671c8a9cfcd09fba287db0e845",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Loudspeaker",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

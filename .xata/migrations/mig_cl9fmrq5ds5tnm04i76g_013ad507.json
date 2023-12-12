@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fmrq5ds5tnm04i76g",
+  "parentID": "mig_cl9fmq25ds5tnm04i75g",
+  "checksum": "1:013ad507a027849e7f8b92e811d954ef1600599124573cb469a5aa3fcb97ea43",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "4G-bands",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

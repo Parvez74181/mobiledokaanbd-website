@@ -1,0 +1,25 @@
+---
+export const prerender = true;
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+import notFound from "../../public/404-svg.svg";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 | Not Found | MobilePriceBD">
+  <main
+    class="min-h-screen w-full md:w-[70%] flex justify-center flex-col items-center"
+  >
+    <Image
+      src={notFound}
+      class="rounded-md object-contain"
+      width={300}
+      height={226}
+      alt="404-pagenot-found"
+    />
+    <p class="text-xl my-5">Oops! Seems page not found!</p>
+    <a href={"/"} class="mb-10 mt-5">
+      <Button text={"Back to Home"} />
+    </a>
+  </main>
+</Layout>

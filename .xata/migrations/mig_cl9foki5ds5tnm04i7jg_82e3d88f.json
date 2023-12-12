@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9foki5ds5tnm04i7jg",
+  "parentID": "mig_cl9foibprbth1akiisb0",
+  "checksum": "1:82e3d88faf702ada9e7be5dc92dd43684f5d219a596014b8da271013d833f564",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Secondary-camera",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

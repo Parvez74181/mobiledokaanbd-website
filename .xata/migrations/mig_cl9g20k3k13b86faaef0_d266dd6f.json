@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g20k3k13b86faaef0",
+  "parentID": "mig_cl9g1ui5ds5tnm04i8eg",
+  "checksum": "1:d266dd6fa205b91f2a11dfdd752ed202333c8d5d6decd3ea2d0d7a2f3cbe57a7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "3g_bands",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

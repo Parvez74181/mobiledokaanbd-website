@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fq825ds5tnm04i820",
+  "parentID": "mig_cl9fq6bprbth1akiissg",
+  "checksum": "1:df58902a0ede709928a1f2fc831e26cf180c42951d514bd11080c05d2e4fb3ff",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "NFC",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fp0k3k13b86faad5g",
+  "parentID": "mig_cl9fosq5ds5tnm04i7mg",
+  "checksum": "1:4ab3305418ee7e09a74dc784e01473626adcf209c69ece31aab6877fe5ff82ab",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Camera-Features",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

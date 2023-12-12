@@ -1,0 +1,14 @@
+{
+  "id": "mig_clc4chgon9v9l0hvi8l0",
+  "parentID": "mig_clbmdq0on9v9l0hvfl30",
+  "checksum": "1:cda57359fd873c65168ab15c6fc2e46316416ff87dd42c73cdafb43a396738fd",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "sub_image_3",
+        "oldName": "sub_img_3",
+        "table": "Posts"
+      }
+    }
+  ]
+}

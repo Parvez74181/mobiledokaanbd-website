@@ -1,0 +1,16 @@
+{
+  "id": "mig_cleqfogcvvlu7b5qtpd0",
+  "parentID": "mig_cldklmk9uul89v5s7nhg",
+  "checksum": "1:45e5fc7d99dd438c17bd9772798a5a0f3838fe7ef8a11a6a5ff44ee2f3bdeb95",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "international_price",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

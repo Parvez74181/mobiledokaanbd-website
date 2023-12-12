@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g2uc3k13b86faaek0",
+  "parentID": "mig_cl9g2sk3k13b86faaej0",
+  "checksum": "1:24eaff9d910004db079ef93a6c93fdea3fc2f1caace2fbe980671d4964042766",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "multitouch",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

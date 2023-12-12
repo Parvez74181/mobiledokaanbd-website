@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3oi5ds5tnm04i8og",
+  "parentID": "mig_cl9g3l3prbth1akiivjg",
+  "checksum": "1:dc45e8c0a8bbaa880f3b06f1c0db36861eedd3574ad2e184427dc22a345205d8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "loudspeaker",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fr9k3k13b86faaddg",
+  "parentID": "mig_cl9fr5q5ds5tnm04i850",
+  "checksum": "1:967aea2ffcc3805b30946a0a0b26c41bb525093acea9cf6b8b9e7300bc73764e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Highlights",
+          "type": "text"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

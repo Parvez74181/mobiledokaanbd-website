@@ -1,0 +1,14 @@
+{
+  "id": "mig_cla9kci5ds5tnm04ku3g",
+  "parentID": "mig_cla9k9q5ds5tnm04ku2g",
+  "checksum": "1:3ae8bb4753046b6943ee90b31807b73f803f79e915d90f002eb67b515145c7df",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "charging",
+        "oldName": "carging",
+        "table": "Posts"
+      }
+    }
+  ]
+}

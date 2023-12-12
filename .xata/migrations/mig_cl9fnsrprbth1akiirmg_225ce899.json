@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fnsrprbth1akiirmg",
+  "parentID": "mig_cl9fnni5ds5tnm04i7ag",
+  "checksum": "1:225ce8995639c11547aaa2a61a3cd69b1d1aed25038cd8b8eb632f9b5eee09ba",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Chipset",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

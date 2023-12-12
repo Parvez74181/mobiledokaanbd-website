@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqerprbth1akiisvg",
+  "parentID": "mig_cl9fqcjprbth1akiisug",
+  "checksum": "1:e93394c9e16df5a87ed1e321b9b17200d4ad84c052802ab5bf233e506d8884af",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Infrared-port",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

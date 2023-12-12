@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fods3k13b86faacp0",
+  "parentID": "mig_cl9foc3prbth1akiis3g",
+  "checksum": "1:f2727340c1055c62ccd29d08cb0a9e9255b6383bb6ca75a71cfc21463bbeb8bf",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "RAM",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

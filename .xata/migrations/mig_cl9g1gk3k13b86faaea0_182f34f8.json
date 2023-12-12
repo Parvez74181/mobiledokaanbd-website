@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g1gk3k13b86faaea0",
+  "parentID": "mig_cl9g1e3prbth1akiivag",
+  "checksum": "1:182f34f808d2596a3b188ff68bae3879a1d1e450c1ade21db69e5d061365cc03",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Announced",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

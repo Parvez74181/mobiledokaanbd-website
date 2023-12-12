@@ -1,0 +1,12 @@
+{
+  "id": "mig_cl9fsv3prbth1akiit60",
+  "parentID": "mig_cl9fsbs3k13b86faadgg",
+  "checksum": "1:d115ac179163aca803f43f38ed3e42133b83629401e175403cb4e322ef404413",
+  "operations": [
+    {
+      "addTable": {
+        "table": "mobile-info-types"
+      }
+    }
+  ]
+}

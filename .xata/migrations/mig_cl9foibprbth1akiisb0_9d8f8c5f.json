@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9foibprbth1akiisb0",
+  "parentID": "mig_cl9fods3k13b86faacp0",
+  "checksum": "1:9d8f8c5f25dad6c77fdb78fec1b958b7744812cde40f276d50b843c5ee063ebb",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Primary-camera",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

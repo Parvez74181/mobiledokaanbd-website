@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g39q5ds5tnm04i8kg",
+  "parentID": "mig_cl9g38c3k13b86faaem0",
+  "checksum": "1:ccfdee872e211445c042f39616b56e8477297946669cab9fa821b9b649fddcec",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "card_slot",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

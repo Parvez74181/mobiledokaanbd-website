@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqns3k13b86faadbg",
+  "parentID": "mig_cl9fqma5ds5tnm04i840",
+  "checksum": "1:e23f923c190f31042c1195c60f80cf0a4d501b1482c9b1a54135cd134a46d353",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Charging",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

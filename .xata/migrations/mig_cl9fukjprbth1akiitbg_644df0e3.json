@@ -1,0 +1,13 @@
+{
+  "id": "mig_cl9fukjprbth1akiitbg",
+  "parentID": "mig_cl9fuirprbth1akiitag",
+  "checksum": "1:644df0e306e2bbee0dd077ee8c64147c008087ed1a5f712ec7c2354d8ffee9f0",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Types",
+        "oldName": "mobile-info-types"
+      }
+    }
+  ]
+}

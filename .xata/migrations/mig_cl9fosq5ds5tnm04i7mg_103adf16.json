@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9fosq5ds5tnm04i7mg",
+  "parentID": "mig_cl9foki5ds5tnm04i7jg",
+  "checksum": "1:103adf169a6ed9bac2629f0448ddfcc3674d47e7579c2b93464b54213a0d8444",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "Display-Features",
+        "oldName": "Features",
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

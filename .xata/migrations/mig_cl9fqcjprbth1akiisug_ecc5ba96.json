@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqcjprbth1akiisug",
+  "parentID": "mig_cl9fqabprbth1akiistg",
+  "checksum": "1:ecc5ba96ed114203e2faa5b546c83288ce02f58d301d14e24fd7c3730c486375",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "USB",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

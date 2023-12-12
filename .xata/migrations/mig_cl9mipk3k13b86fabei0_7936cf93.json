@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9mipk3k13b86fabei0",
+  "parentID": "mig_cl9milrprbth1akijmc0",
+  "checksum": "1:7936cf9351bac1e47fd054c3aa712a00bdbcae5c688d58b189e29d1efc8d3a93",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "back_camera",
+        "oldName": "secondary_camera",
+        "table": "Posts"
+      }
+    }
+  ]
+}

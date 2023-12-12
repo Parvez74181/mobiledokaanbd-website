@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g4es3k13b86faaes0",
+  "parentID": "mig_cl9g4arprbth1akiivmg",
+  "checksum": "1:b8ff417dd33d4b915a747d57cda3ad39757d4e478c3d9c78858923019d60ccbe",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "sensors",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

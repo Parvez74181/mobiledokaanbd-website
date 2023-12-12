@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqma5ds5tnm04i840",
+  "parentID": "mig_cl9fqji5ds5tnm04i830",
+  "checksum": "1:297ab0c63d6fe5a7871aa0a20ccc792e51f6249cdca32852e009750cc1fc45c8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Battery-capacity",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

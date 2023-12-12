@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g473prbth1akiivlg",
+  "parentID": "mig_cl9g45c3k13b86faaeq0",
+  "checksum": "1:fde2a414a24cdde56fabb7f5d9a364c3ffc8ba1c101b0cd1fd31c9f109270c6c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "fm_radio",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

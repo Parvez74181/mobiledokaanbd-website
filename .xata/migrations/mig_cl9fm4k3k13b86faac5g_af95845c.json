@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fm4k3k13b86faac5g",
+  "parentID": "mig_cl9fm2bprbth1akiircg",
+  "checksum": "1:af95845cf1dab8ab7be54daa615f85a161373771f716a02090ed842a7b5835d4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Battery",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

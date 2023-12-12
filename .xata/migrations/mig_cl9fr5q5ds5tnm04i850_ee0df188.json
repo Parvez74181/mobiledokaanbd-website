@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fr5q5ds5tnm04i850",
+  "parentID": "mig_cl9fr3c3k13b86faadcg",
+  "checksum": "1:ee0df1885d79f25f60fdcbd8801e814b25aadad067a2daf21b3e418586ad14df",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Cons",
+          "type": "json"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

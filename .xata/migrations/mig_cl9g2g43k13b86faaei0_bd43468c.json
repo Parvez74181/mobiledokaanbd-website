@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g2g43k13b86faaei0",
+  "parentID": "mig_cl9g2ejprbth1akiivcg",
+  "checksum": "1:bd43468ca12f39c72c5826e96c271088743b967a163d013c5946785b727b449e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "weight",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

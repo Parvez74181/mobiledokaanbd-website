@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g2arprbth1akiivbg",
+  "parentID": "mig_cl9g29c3k13b86faaeh0",
+  "checksum": "1:72aa242a663f0edda914200e2c559e3b6b16b92bc7d0164ba5305dcd2c309316",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "edge",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

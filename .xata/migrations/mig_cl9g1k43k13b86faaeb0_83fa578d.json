@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9g1k43k13b86faaeb0",
+  "parentID": "mig_cl9g1gk3k13b86faaea0",
+  "checksum": "1:83fa578d81a715b048b07627208e4e45bf6c406d7404232c5f7befc62cae8516",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "announced",
+        "oldName": "Announced",
+        "table": "Posts"
+      }
+    }
+  ]
+}

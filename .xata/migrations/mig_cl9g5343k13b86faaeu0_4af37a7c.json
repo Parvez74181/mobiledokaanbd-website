@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g5343k13b86faaeu0",
+  "parentID": "mig_cl9g51a5ds5tnm04i8sg",
+  "checksum": "1:4af37a7c9923763604ace2c795215bdb266dbd6244ce1c8e6e6d0a644f058ad1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "carging",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

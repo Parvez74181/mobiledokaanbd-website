@@ -1,0 +1,13 @@
+{
+  "id": "mig_cl9fuirprbth1akiitag",
+  "parentID": "mig_cl9ftc3prbth1akiit9g",
+  "checksum": "1:29c9f6f286f865a6765d2f423f8e157eafe020bf36967bc8bf377d7171e6772f",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Posts",
+        "oldName": "mobile-info"
+      }
+    }
+  ]
+}

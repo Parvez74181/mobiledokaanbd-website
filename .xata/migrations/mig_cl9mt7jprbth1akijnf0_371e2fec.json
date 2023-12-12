@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9mt7jprbth1akijnf0",
+  "parentID": "mig_cl9mssjprbth1akijne0",
+  "checksum": "1:371e2fec19ad2a607faf8b81fa015f8f56b5d451a88ab2abbf96a66a519b7db8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "visitors",
+          "type": "int"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

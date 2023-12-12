@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g42i5ds5tnm04i8pg",
+  "parentID": "mig_cl9g40c3k13b86faaeo0",
+  "checksum": "1:1da4e588c8567b2eb0c197230c1019441c8e7eed49f0c241784e2174a7f1238e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "bluetooth",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

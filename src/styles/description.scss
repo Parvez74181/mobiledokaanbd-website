@@ -1,0 +1,121 @@
+#desc-full {
+  font-family: "Inter", sans-serif !important;
+  scroll-behavior: smooth !important;
+  // text-align: justify;
+  blockquote {
+    background-color: rgba(255, 0, 0, 0.07);
+    border-left: 4px solid rgba(255, 0, 0, 0.5);
+    padding-left: 15px;
+  }
+  h1 {
+    font-size: clamp(
+      2.113rem,
+      1.9252rem + 0.9390000000000001vw,
+      3.052rem
+    ) !important;
+  }
+  h2 {
+    font-size: clamp(
+      1.699rem,
+      1.5506000000000002rem + 0.7419999999999998vw,
+      2.441rem
+    ) !important;
+    line-height: 2.5rem;
+  }
+  h3 {
+    font-size: clamp(1.35rem, 1.2294rem + 0.603vw, 1.953rem) !important;
+  }
+  h4 {
+    font-size: clamp(
+      1.253rem,
+      1.1909999999999998rem + 0.31000000000000005vw,
+      1.563rem
+    ) !important;
+  }
+  h5 {
+    font-size: clamp(
+      1.063rem,
+      1.0255999999999998rem + 0.18700000000000006vw,
+      1.25rem
+    ) !important;
+  }
+  h6 {
+    font-size: clamp(
+      1.063rem,
+      1.0255999999999998rem + 0.18700000000000006vw,
+      1.25rem
+    ) !important;
+  }
+
+  ul,
+  ol {
+    list-style: disc;
+    margin: auto;
+    padding-left: 40px;
+  }
+  ol {
+    list-style: decimal;
+  }
+
+  img {
+    max-height: 450px;
+    object-fit: contain;
+  }
+  table,
+  tbody,
+  td,
+  tr,
+  font {
+    font-family: "Inter", sans-serif !important;
+  }
+  td {
+    span {
+      font-family: "Inter", sans-serif !important;
+    }
+  }
+  div,
+  tbody {
+    width: auto !important;
+  }
+
+  tr,
+  td {
+    font-size: 16px !important;
+  }
+  td {
+    border: 1px solid rgb(31, 31, 31) !important;
+
+    width: 250px !important;
+  }
+  p {
+    line-height: 32px !important;
+  }
+  button {
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  a {
+    cursor: pointer;
+    color: #0c91f3;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    font-size: 16px !important;
+  }
+  img {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 746px) {
+  #desc-full {
+    div:has(table) {
+      overflow-x: auto;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cl9g9di5ds5tnm04i91g",
+  "parentID": "mig_cl9g99rprbth1akij180",
+  "checksum": "1:88f4e837d2b5a9b93f3d11e38d7d398fcd40321121393c3d7dac5b30615db34b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "brands",
+          "type": "link",
+          "link": {
+            "table": "Brands"
+          }
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

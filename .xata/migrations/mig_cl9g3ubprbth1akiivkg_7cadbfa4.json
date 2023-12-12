@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3ubprbth1akiivkg",
+  "parentID": "mig_cl9g3oi5ds5tnm04i8og",
+  "checksum": "1:7cadbfa4e486925417e3f4c81e7469b1edbcc5d27a101190ac498c8620ff53d7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "headphone_jack",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

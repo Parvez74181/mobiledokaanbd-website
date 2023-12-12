@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fmq25ds5tnm04i75g",
+  "parentID": "mig_cl9fmnbprbth1akiirdg",
+  "checksum": "1:82f7b0bb296f2c443fd1ce26bdecb6293b9a93b63b7449f76e95677a081a8199",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "3G-bands",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

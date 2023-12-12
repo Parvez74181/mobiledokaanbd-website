@@ -1,0 +1,12 @@
+{
+  "id": "mig_cl9fvtc3k13b86faae20",
+  "parentID": "mig_cl9fvs43k13b86faadu0",
+  "checksum": "1:163fbd12fc6d1e4b6c272878ab61a8978b6d705119d3877afabe5da6af22e8a8",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Posts"
+      }
+    }
+  ]
+}

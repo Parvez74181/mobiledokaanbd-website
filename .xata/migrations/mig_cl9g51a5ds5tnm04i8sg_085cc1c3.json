@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g51a5ds5tnm04i8sg",
+  "parentID": "mig_cl9g4vi5ds5tnm04i8rg",
+  "checksum": "1:085cc1c33075cbe31078a8fb2425ef439e406bde040d51d34566cb068133f555",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "battery_capacity",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g48c3k13b86faaer0",
+  "parentID": "mig_cl9g473prbth1akiivlg",
+  "checksum": "1:cd8785f20429a4164f500f0d65af1dd317858cbbaa58652efcc76ab339942d22",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "usb",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

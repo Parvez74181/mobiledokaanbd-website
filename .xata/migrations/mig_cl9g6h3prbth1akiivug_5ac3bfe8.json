@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9g6h3prbth1akiivug",
+  "parentID": "mig_cl9g6frprbth1akiivtg",
+  "checksum": "1:5ac3bfe84ff747da795dcad0113ddeca39528a5950c0b2fb1580276d53081a74",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "brand",
+        "oldName": "Brand",
+        "table": "Brands"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fn8bprbth1akiireg",
+  "parentID": "mig_cl9fn643k13b86faacag",
+  "checksum": "1:aeb788b77b3e9db7a2d532e555bc92e8402d10150411140c3d58657bc91dc2a9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Weight",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

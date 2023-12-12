@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9ftc3prbth1akiit9g",
+  "parentID": "mig_cl9ft9rprbth1akiit8g",
+  "checksum": "1:6eaf47c18eb8631a1e1797ec6718ceee4c717ca4f49655de0e43db788749740e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Brand",
+          "type": "string"
+        },
+        "table": "mobile-info-brands"
+      }
+    }
+  ]
+}

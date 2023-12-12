@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g1rs3k13b86faaee0",
+  "parentID": "mig_cl9g1pk3k13b86faaed0",
+  "checksum": "1:ba812ac743e8eadd34e3947e7b02a07fb66868f162cfb772c995821ced06cd80",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "2g_bangs",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

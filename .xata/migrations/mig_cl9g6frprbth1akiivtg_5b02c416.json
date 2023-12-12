@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9g6frprbth1akiivtg",
+  "parentID": "mig_cl9g5e3prbth1akiivsg",
+  "checksum": "1:5b02c4162fbf956f6496e429bc994acc59e0cef5ea8b5a6bfa9a6a6f6626188b",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "type",
+        "oldName": "Type",
+        "table": "Types"
+      }
+    }
+  ]
+}

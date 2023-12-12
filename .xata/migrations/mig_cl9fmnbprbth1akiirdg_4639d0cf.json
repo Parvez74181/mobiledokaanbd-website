@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fmnbprbth1akiirdg",
+  "parentID": "mig_cl9fmgc3k13b86faac7g",
+  "checksum": "1:4639d0cfbb676b9fe73ea2082e299ddaabbe43bf774a4af1100d074b6003c235",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "2G-bands",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

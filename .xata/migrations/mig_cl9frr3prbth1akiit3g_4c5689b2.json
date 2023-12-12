@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9frr3prbth1akiit3g",
+  "parentID": "mig_cl9frnrprbth1akiit2g",
+  "checksum": "1:4c5689b2c553822add5debd1478b96cd87f64eafa89630f7e2df565cb573cde2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "2nd-img",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

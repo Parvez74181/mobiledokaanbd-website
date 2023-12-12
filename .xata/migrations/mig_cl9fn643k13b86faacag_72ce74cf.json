@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fn643k13b86faacag",
+  "parentID": "mig_cl9fn3c3k13b86faac9g",
+  "checksum": "1:72ce74cfad030c1692412e6366a6c00af9014ee635fcf9bb6a55d877be4de0ff",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Dimensions",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

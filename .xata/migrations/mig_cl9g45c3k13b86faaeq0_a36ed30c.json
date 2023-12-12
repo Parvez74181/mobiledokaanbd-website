@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g45c3k13b86faaeq0",
+  "parentID": "mig_cl9g43k3k13b86faaep0",
+  "checksum": "1:a36ed30c7ec2ea5210a8c1d88fafeba84057bd914acfbe5249c8014814b710a5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "nfc",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

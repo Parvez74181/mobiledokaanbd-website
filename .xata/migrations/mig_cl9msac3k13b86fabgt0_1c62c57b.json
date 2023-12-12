@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9msac3k13b86fabgt0",
+  "parentID": "mig_cl9ms83prbth1akijn80",
+  "checksum": "1:1c62c57b702b9d10b477ac590e77cbecb4f3b8d88529ecdf882123e9b7f546fc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "official_price",
+          "type": "json"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

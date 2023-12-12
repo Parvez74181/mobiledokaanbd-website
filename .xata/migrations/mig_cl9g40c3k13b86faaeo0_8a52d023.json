@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g40c3k13b86faaeo0",
+  "parentID": "mig_cl9g3ubprbth1akiivkg",
+  "checksum": "1:8a52d0239b8fbcee121d53c3d40444371f67c3a1c57a8d1dc92bd0926154a4e0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "wlan",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

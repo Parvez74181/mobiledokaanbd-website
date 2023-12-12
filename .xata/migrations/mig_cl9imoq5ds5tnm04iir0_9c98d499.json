@@ -1,0 +1,12 @@
+{
+  "id": "mig_cl9imoq5ds5tnm04iir0",
+  "parentID": "mig_cl9ggpq5ds5tnm04iang",
+  "checksum": "1:9c98d499f408a26df42882483bc847b96ff17dc02a837c5ff63fefa3045ca9b8",
+  "operations": [
+    {
+      "addTable": {
+        "table": "AdminTokens"
+      }
+    }
+  ]
+}

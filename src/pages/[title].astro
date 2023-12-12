@@ -1,0 +1,1750 @@
+---
+export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Eye from "../../public/eye.svg";
+import ok_icon from "../../public/ok_icon.svg";
+import cross_icon from "../../public/cross_icon.svg";
+import { XataClient } from "../xata";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+let record: any;
+const record_slug = Astro.url.pathname.split("/")[1];
+
+try {
+  record = await xata.db.Posts.filter({ slug: record_slug })
+    .select([
+      "id",
+      "title",
+      "released",
+      "os",
+      "display",
+      "camera",
+      "processor",
+      "battery",
+      "announced",
+      "status",
+      "technology",
+      "bands_2g",
+      "bands_3g",
+      "bands_4g",
+      "bands_5g",
+      "speed",
+      "dimensions",
+      "weight",
+      "build",
+      "sim",
+      "type",
+      "size",
+      "resolution",
+      "multitouch",
+      "protection",
+      "display_features",
+      "chipset",
+      "cpu",
+      "gpu",
+      "card_slot",
+      "internal",
+      "ram",
+      "front_camera",
+      "back_camera",
+      "camera_features",
+      "video",
+      "loudspeaker",
+      "headphone_jack",
+      "wlan",
+      "bluetooth",
+      "gps",
+      "nfc",
+      "fm_radio",
+      "usb",
+      "infrared_port",
+      "sensors",
+      "messaging",
+      "browser",
+      "java",
+      "battery_types",
+      "battery_capacity",
+      "charging",
+      "made_by",
+      "color",
+      "highlights",
+      "pros",
+      "cons",
+      "ratings",
+      "body_others",
+      "images",
+      "official_price",
+      "unofficial_price",
+      "price_range",
+      "international_price",
+      "slug",
+      "alert_types",
+      "types.id",
+      "types.type",
+      "brands.id",
+      "brands.brand",
+    ])
+    .getFirst();
+} catch (error) {
+  console.log(error);
+}
+---
+
+<Layout
+  title={record?.title +
+    " Price in Bangladesh Full Specs & Review | MobilePriceBD"}
+  createdAt={record?.xata.createdAt}
+  image={record?.images.split(",")[0]}
+>
+  <main class="min-h-screen w-full xl:w-[70%] px-5">
+    <nav class="flex mb-3 breadcrumb" aria-label="Breadcrumb">
+      <ol
+        class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+      >
+        <li class="inline-flex items-center">
+          <a
+            href="/"
+            class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-green-600"
+          >
+            <svg
+              class="w-3 h-3 me-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+              ></path>
+            </svg>
+             Home
+          </a>
+        </li>
+
+        <li aria-current="page">
+          <a href={`/${record?.slug}`} class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"></path>
+            </svg>
+            <span
+              class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400"
+              >{record?.title}</span
+            >
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- product-title -->
+    <h1
+      class="product-title border-b-2 text-3xl font-black md:text-4xl"
+      set:html={record?.title}
+    />
+
+    <!-- full-screen-img-container -->
+    <div
+      class="full-screen-img-container flex justify-center items-center absolute top-[-100px] left-0 z-50 backdrop-blur-lg"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="close-icon scale-[1.2] absolute top-10 right-10 hidden cursor-pointer"
+        viewBox="0 0 512 512"
+        ><path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="50"
+          d="M368 368L144 144M368 144L144 368"></path></svg
+      >
+    </div>
+
+    <!-- product-main-feature -->
+    <div
+      class="product-main-feature my-5 w-full flex justify-between flex-col md:flex-row gap-2"
+    >
+      <!-- images -->
+      <div class="w-full xl:mr-5 md:w-1/2 product-imgs relative">
+        <!-- thumbnail -->
+
+        <Image
+          src={record?.images.split(",")[0]}
+          height={500}
+          width={500}
+          id="thumbnail"
+          class="object-contain cursor-pointer w-[400px] h-[400px] border"
+          alt={record?.title}
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="img-extend absolute top-2 left-2 cursor-pointer hover:text-green-600"
+          viewBox="0 0 512 512"
+          ><path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="30"
+            d="M432 320v112H320M421.8 421.77L304 304M80 192V80h112M90.2 90.23L208 208M320 80h112v112M421.77 90.2L304 208M192 432H80V320M90.23 421.8L208 304"
+          ></path></svg
+        >
+        <!-- extra imgs -->
+        <div class="extra-imgs w-full grid grid-cols-4 gap-2 my-2">
+          <!-- sub_imgs -->
+          {
+            record?.images.split(",").map((img: any) => {
+              return (
+                <>
+                  <Image
+                    id="imgs"
+                    class="imgs cursor-pointer object-contain h-[100px] w-[100px] border"
+                    src={img.trim()}
+                    height={100}
+                    width={100}
+                    alt={record?.title}
+                  />
+                </>
+              );
+            })
+          }
+        </div>
+        <span class="italic my-2 text-xs"
+          >*Some prices may not be up to date according to today’s latest price.
+          Additional VAT may be applicable</span
+        >
+      </div>
+
+      <div class="w-full xl:ms-5 md:w-1/2 feature-info-list-container">
+        <!-- price box -->
+        <div class="price-box w-full flex flex-col justify-center">
+          <h1 class="text-2xl font-bold border-b-2">Price in Bangladesh</h1>
+          <table class="border mt-4">
+            <tbody>
+              <!-- Official Price -->
+              <tr>
+                <td class="border p-3 text-center">Official</td>
+                <td class="border p-3">
+                  {
+                    record?.official_price
+                      ? record?.official_price
+                          ?.split("<br>")
+                          .map((price: any) => {
+                            return (
+                              <>
+                                {`৳ ${price}`} <br />
+                              </>
+                            );
+                          })
+                      : "-"
+                  }
+                </td>
+              </tr>
+
+              <!-- unOfficial Price -->
+
+              <tr>
+                <td class="border p-3 text-center">UnOfficial</td>
+                <td class="border p-3">
+                  {
+                    record?.unofficial_price
+                      ? record?.unofficial_price
+                          ?.split("<br>")
+                          .map((price: any) => {
+                            return (
+                              <>
+                                {`৳ ${price}`} <br />
+                              </>
+                            );
+                          })
+                      : "-"
+                  }
+                </td>
+              </tr>
+
+              <!-- international Price -->
+              <tr>
+                <td class="border p-3 text-center">International</td>
+                <td class="border p-3">
+                  {
+                    record?.international_price
+                      ? record?.international_price
+                          ?.split("<br>")
+                          .map((price: any) => {
+                            return (
+                              <>
+                                {`৳ ${price}`} <br />
+                              </>
+                            );
+                          })
+                      : "-"
+                  }
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div
+            class="other-details flex flex-col justify-between text-gray-600"
+          >
+            <!-- other details -->
+            <div class="created-and-updated-time flex flex-col">
+              <span class="text-sm my-1 mt-2"
+                >Category: <a
+                  class="hover:underline text-green-600"
+                  href={`/types?type=${record?.types.type
+                    .toLowerCase()
+                    .split(" ")
+                    .join("-")}`}>{record?.types.type}</a
+                ></span
+              >
+
+              <span class="text-sm my-1"
+                >Brand: <a
+                  class="hover:underline text-green-600"
+                  href={`/brands?brand=${record?.brands.brand.toLowerCase()}`}
+                  >{record?.brands.brand}</a
+                ></span
+              >
+
+              <span class="text-sm my-1"
+                >Added on: {
+                  record?.xata.createdAt.toISOString().split("T")[0]
+                }</span
+              >
+
+              <span class="text-sm my-1"
+                >Last Updated: {
+                  record?.xata.updatedAt.toISOString().split("T")[0]
+                }</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- feature-info-list -->
+        <ul class="feature-info-list text-sm md:text-base">
+          <!-- released -->
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              ><rect
+                x="48"
+                y="80"
+                width="416"
+                height="384"
+                rx="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M128 48v32M384 48v32M464 160H48M304 260l43.42-32H352v168M191.87 306.63c9.11 0 25.79-4.28 36.72-15.47a37.9 37.9 0 0011.13-27.26c0-26.12-22.59-39.9-47.89-39.9-21.4 0-33.52 11.61-37.85 18.93M149 374.16c4.88 8.27 19.71 25.84 43.88 25.84 28.59 0 52.12-15.94 52.12-43.82 0-12.62-3.66-24-11.58-32.07-12.36-12.64-31.25-17.48-41.55-17.48"
+              ></path></svg
+            >
+            <span class="feature-info">
+              <strong>Released:</strong>&nbsp; {record?.released}</span
+            >
+          </li>
+
+          <!-- os -->
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="invert"
+              viewBox="0 0 512 512"
+              ><path
+                d="M380.91 199l42.47-73.57a8.63 8.63 0 00-3.12-11.76 8.52 8.52 0 00-11.71 3.12l-43 74.52c-32.83-15-69.78-23.35-109.52-23.35s-76.69 8.36-109.52 23.35l-43-74.52a8.6 8.6 0 10-14.88 8.64L131 199C57.8 238.64 8.19 312.77 0 399.55h512c-8.19-86.78-57.8-160.91-131.09-200.55zM138.45 327.65a21.46 21.46 0 1121.46-21.46 21.47 21.47 0 01-21.46 21.46zm235 0A21.46 21.46 0 11395 306.19a21.47 21.47 0 01-21.51 21.46z"
+              ></path></svg
+            >
+            <span class="feature-info"
+              ><strong>OS:</strong>&nbsp; {record?.os}</span
+            >
+          </li>
+
+          <!-- display -->
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              ><rect
+                x="128"
+                y="16"
+                width="256"
+                height="480"
+                rx="48"
+                ry="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><path
+                d="M176 16h24a8 8 0 018 8h0a16 16 0 0016 16h64a16 16 0 0016-16h0a8 8 0 018-8h24"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></path></svg
+            >
+            <span class="feature-info"
+              ><strong>Display:</strong>&nbsp; {record?.display}</span
+            >
+          </li>
+
+          <!-- Camera -->
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              ><path
+                d="M350.54 148.68l-26.62-42.06C318.31 100.08 310.62 96 302 96h-92c-8.62 0-16.31 4.08-21.92 10.62l-26.62 42.06C155.85 155.23 148.62 160 140 160H80a32 32 0 00-32 32v192a32 32 0 0032 32h352a32 32 0 0032-32V192a32 32 0 00-32-32h-59c-8.65 0-16.85-4.77-22.46-11.32z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></path><circle
+                cx="256"
+                cy="272"
+                r="80"
+                fill="none"
+                stroke="currentColor"
+                stroke-miterlimit="10"
+                stroke-width="32"></circle><path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M124 158v-22h-24v22"></path></svg
+            >
+            <span class="feature-info"
+              ><strong>Camera:</strong>&nbsp; {record?.camera}</span
+            >
+          </li>
+
+          <!-- Processor -->
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+              ><rect
+                x="80"
+                y="80"
+                width="352"
+                height="352"
+                rx="48"
+                ry="48"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><rect
+                x="144"
+                y="144"
+                width="224"
+                height="224"
+                rx="16"
+                ry="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M256 80V48M336 80V48M176 80V48M256 464v-32M336 464v-32M176 464v-32M432 256h32M432 336h32M432 176h32M48 256h32M48 336h32M48 176h32"
+              ></path></svg
+            >
+            <span class="feature-info"
+              ><strong>Processor:</strong>&nbsp; {record?.processor}</span
+            >
+          </li>
+
+          <!-- battery -->
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+              ><rect
+                x="32"
+                y="144"
+                width="400"
+                height="224"
+                rx="45.7"
+                ry="45.7"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="square"
+                stroke-miterlimit="10"
+                stroke-width="32"></rect>
+              <rect
+                x="85.69"
+                y="198.93"
+                width="154.31"
+                height="114.13"
+                rx="4"
+                ry="4"
+                fill="currentColor"
+                stroke="none"
+                stroke-linecap="square"
+                stroke-miterlimit="10"
+                stroke-width="32"></rect>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke-width="32"
+                d="M480 218.67v74.66"></path>
+            </svg>
+            <span class="feature-info"
+              ><strong>Battery:</strong> &nbsp; {record?.battery}</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- rating -->
+    <div class="rating mb-8">
+      <h1 class="text-2xl font-bold border-b-2 mb-5">Our Ratings</h1>
+      <div
+        class="progress-bar-container w-full flex justify-between items-center gap-2"
+      >
+        <div class="bg-gray-200 rounded-full h-2.5 w-[90%] md:w-[95%]">
+          <div
+            id="progress-bar"
+            class="bg-green-600 h-2.5 rounded-full"
+            data-rating={record?.ratings}
+          >
+          </div>
+        </div>
+
+        <span
+          class="progress-number-container text-white bg-gray-900 rounded-lg shadow-sm tooltip w-[10%] md:w-[5%] font-bold tracking-widest text-xs mx-auto text-center px-2"
+          >{record?.ratings}</span
+        >
+      </div>
+    </div>
+
+    <!-- product-others-features -->
+    <div class="product-others-features w-full text-sm md:text-base">
+      <!-- Launch table -->
+
+      <table class="border-collapse w-full">
+        <div
+          class="table-head border p-4 flex justify-between items-center w-full"
+        >
+          <span>Launch</span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <>
+                <rect
+                  x="48"
+                  y="80"
+                  width="416"
+                  height="384"
+                  rx="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"></rect>
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M128 48v32M384 48v32M464 160H48M304 260l43.42-32H352v168M191.87 306.63c9.11 0 25.79-4.28 36.72-15.47a37.9 37.9 0 0011.13-27.26c0-26.12-22.59-39.9-47.89-39.9-21.4 0-33.52 11.61-37.85 18.93M149 374.16c4.88 8.27 19.71 25.84 43.88 25.84 28.59 0 52.12-15.94 52.12-43.82 0-12.62-3.66-24-11.58-32.07-12.36-12.64-31.25-17.48-41.55-17.48"
+                ></path>
+              </>
+            </svg>
+          </span>
+        </div>
+
+        <tbody>
+          <tr>
+            <td class="border p-4">Announced</td>
+            <td
+              class="border p-4"
+              set:html={record?.announced ? record?.announced : "-"}
+            />
+          </tr>
+          <tr>
+            <td class="border p-4">Status</td>
+            <td
+              class="border p-4"
+              set:html={record?.status ? record?.status : "-"}
+            />
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- network table -->
+
+      <table class="border-collapse w-full">
+        <div
+          class="table-head border p-4 flex justify-between items-center w-full"
+        >
+          <span>Network</span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+              ><rect
+                x="64"
+                y="320"
+                width="48"
+                height="160"
+                rx="8"
+                ry="8"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><rect
+                x="288"
+                y="224"
+                width="48"
+                height="256"
+                rx="8"
+                ry="8"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><rect
+                x="400"
+                y="112"
+                width="48"
+                height="368"
+                rx="8"
+                ry="8"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></rect><rect
+                x="176"
+                y="32"
+                width="48"
+                height="448"
+                rx="8"
+                ry="8"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"></rect></svg
+            >
+          </span>
+        </div>
+
+        <tbody>
+          <tr>
+            <td class="border p-4">Technology</td>
+            <td class="border p-4" set:html={record?.technology} />
+          </tr>
+          <tr>
+            <td class="border p-4">2G bands</td>
+            <td class="border p-4" set:html={record?.bands_2g} />
+          </tr>
+          <tr>
+            <td class="border p-4">3G bands</td>
+            <td class="border p-4" set:html={record?.bands_3g} />
+          </tr>
+          <tr>
+            <td class="border p-4">4G bands</td>
+            <td class="border p-4" set:html={record?.bands_4g} />
+          </tr>
+          <tr>
+            <td class="border p-4">5G bands</td>
+            <td class="border p-4" set:html={record?.bands_5g} />
+          </tr>
+          <tr>
+            <td class="border p-4">Speed</td>
+            <td class="border p-4" set:html={record?.speed} />
+          </tr>
+        </tbody>
+
+        <!-- Body table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Body</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><rect
+                  x="48"
+                  y="96"
+                  width="416"
+                  height="304"
+                  rx="32.14"
+                  ry="32.14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"></rect><path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M16 416h480"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Dimensions</td>
+              <td class="border p-4" set:html={record?.dimensions} />
+            </tr>
+            <tr>
+              <td class="border p-4">Weight</td>
+              <td class="border p-4" set:html={record?.weight} />
+            </tr>
+            <tr>
+              <td class="border p-4">Build</td>
+              <td
+                class="border p-4"
+                set:html={record?.build ? record?.build : "-"}
+              />
+            </tr>
+            <tr>
+              <td class="border p-4">SIM</td>
+              <td class="border p-4" set:html={record?.sim} />
+            </tr>
+            <tr>
+              <td class="border p-4">Others</td>
+              <td
+                class="border p-4"
+                set:html={record?.body_others ? record?.body_others : "-"}
+              />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Display table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Display</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><rect
+                  x="128"
+                  y="16"
+                  width="256"
+                  height="480"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"></rect><path
+                  d="M176 16h24a8 8 0 018 8h0a16 16 0 0016 16h64a16 16 0 0016-16h0a8 8 0 018-8h24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4"> Type</td>
+              <td class="border p-4" set:html={record?.type} />
+            </tr>
+            <tr>
+              <td class="border p-4">Size</td>
+              <td class="border p-4" set:html={record?.size} />
+            </tr>
+            <tr>
+              <td class="border p-4">Resolution</td>
+              <td class="border p-4" set:html={record?.resolution} />
+            </tr>
+            <tr>
+              <td class="border p-4">Multitouch</td>
+              <td class="border p-4">
+                {
+                  record?.multitouch === "Yes" ||
+                  record?.multitouch === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.multitouch}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.multitouch}
+                    </>
+                  )
+                }
+              </td>
+            </tr>
+            <tr>
+              <td class="border p-4">Protection</td>
+              <td class="border p-4" set:html={record?.protection} />
+            </tr>
+            <tr>
+              <td class="border p-4">Features</td>
+              <td class="border p-4" set:html={record?.display_features} />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Platform table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Platform</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><rect
+                  x="80"
+                  y="80"
+                  width="352"
+                  height="352"
+                  rx="48"
+                  ry="48"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"></rect><rect
+                  x="144"
+                  y="144"
+                  width="224"
+                  height="224"
+                  rx="16"
+                  ry="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linejoin="round"
+                  stroke-width="32"></rect><path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M256 80V48M336 80V48M176 80V48M256 464v-32M336 464v-32M176 464v-32M432 256h32M432 336h32M432 176h32M48 256h32M48 336h32M48 176h32"
+                ></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4"> OS</td>
+              <td class="border p-4" set:html={record?.os} />
+            </tr>
+            <tr>
+              <td class="border p-4">Chipset</td>
+              <td class="border p-4" set:html={record?.chipset} />
+            </tr>
+            <tr>
+              <td class="border p-4">CPU</td>
+              <td class="border p-4" set:html={record?.cpu} />
+            </tr>
+            <tr>
+              <td class="border p-4">GPU</td>
+              <td class="border p-4" set:html={record?.gpu} />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Memory table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Memory</span>
+            <span>
+              <svg
+                fill="#000000"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+                class="invert"
+              >
+                <g>
+                  <g>
+                    <path
+                      d="M431.966,109.901l-102.4-102.4C324.77,2.697,318.259,0,311.467,0H98.133c-14.14,0-25.6,11.46-25.6,25.6v460.8
+			c0,14.14,11.46,25.6,25.6,25.6h315.733c14.14,0,25.6-11.46,25.6-25.6V128C439.467,121.207,436.77,114.697,431.966,109.901z
+			 M413.867,486.4H98.133V25.6h213.333l102.4,102.4V486.4z"
+                    ></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <rect x="123.733" y="51.2" width="25.6" height="93.867"
+                    ></rect>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <rect x="174.933" y="51.2" width="25.6" height="93.867"
+                    ></rect>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <rect x="226.133" y="51.2" width="25.6" height="93.867"
+                    ></rect>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <rect x="277.333" y="51.2" width="25.6" height="93.867"
+                    ></rect>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <rect x="328.533" y="93.867" width="25.6" height="51.2"
+                    ></rect>
+                  </g>
+                </g>
+              </svg>
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Card slot</td>
+              <td class="border p-4">
+                {
+                  record?.card_slot === "Yes" || record?.card_slot === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.card_slot}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.card_slot}
+                    </>
+                  )
+                }</td
+              >
+            </tr>
+            <tr>
+              <td class="border p-4">Internal</td>
+              <td class="border p-4" set:html={record?.internal} />
+            </tr>
+            <tr>
+              <td class="border p-4">RAM</td>
+              <td class="border p-4" set:html={record?.ram} />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Camera table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Camera</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><path
+                  d="M350.54 148.68l-26.62-42.06C318.31 100.08 310.62 96 302 96h-92c-8.62 0-16.31 4.08-21.92 10.62l-26.62 42.06C155.85 155.23 148.62 160 140 160H80a32 32 0 00-32 32v192a32 32 0 0032 32h352a32 32 0 0032-32V192a32 32 0 00-32-32h-59c-8.65 0-16.85-4.77-22.46-11.32z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"></path><circle
+                  cx="256"
+                  cy="272"
+                  r="80"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"></circle><path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M124 158v-22h-24v22"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Front camera</td>
+              <td class="border p-4" set:html={record?.front_camera} />
+            </tr>
+            <tr>
+              <td class="border p-4">Back camera</td>
+              <td class="border p-4" set:html={record?.back_camera} />
+            </tr>
+            <tr>
+              <td class="border p-4">Features</td>
+              <td class="border p-4" set:html={record?.camera_features} />
+            </tr>
+            <tr>
+              <td class="border p-4">Video</td>
+              <td class="border p-4" set:html={record?.video} />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Sound table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Sound</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><path
+                  d="M192 218v-6c0-14.84 10-27 24.24-30.59l174.59-46.68A20 20 0 01416 154v22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"></path><path
+                  d="M416 295.94v80c0 13.91-8.93 25.59-22 30l-22 8c-25.9 8.72-52-10.42-52-38h0a33.37 33.37 0 0123-32l51-18.15c13.07-4.4 22-15.94 22-29.85V58a10 10 0 00-12.6-9.61L204 102a16.48 16.48 0 00-12 16v226c0 13.91-8.93 25.6-22 30l-52 18c-13.88 4.68-22 17.22-22 32h0c0 27.58 26.52 46.55 52 38l22-8c13.07-4.4 22-16.08 22-30v-80"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Alert types</td>
+              <td class="border p-4" set:html={record?.alert_types} />
+            </tr>
+            <tr>
+              <td class="border p-4">Loudspeaker</td>
+              <td class="border p-4" set:html={record?.loudspeaker} />
+            </tr>
+            <tr>
+              <td class="border p-4">3.5mm jack</td>
+              <td class="border p-4">
+                {
+                  record?.headphone_jack === "Yes" ||
+                  record?.headphone_jack === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.headphone_jack}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.headphone_jack}
+                    </>
+                  )
+                }
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Connectivity table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Connectivity</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M144 352l224-192L256 48v416l112-112-224-192"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">WLAN</td>
+              <td class="border p-4" set:html={record?.wlan} />
+            </tr>
+            <tr>
+              <td class="border p-4">Bluetooth</td>
+              <td class="border p-4" set:html={record?.bluetooth} />
+            </tr>
+            <tr>
+              <td class="border p-4">GPS</td>
+              <td class="border p-4" set:html={record?.gps} />
+            </tr>
+            <tr>
+              <td class="border p-4">NFC</td>
+              <td class="border p-4">
+                {
+                  record?.nfc === "Yes" || record?.nfc === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.nfc}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.nfc}
+                    </>
+                  )
+                }</td
+              >
+            </tr>
+            <tr>
+              <td class="border p-4">FM radio</td>
+              <td class="border p-4">
+                {
+                  record?.fm_radio === "Yes" || record?.fm_radio === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.fm_radio}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.fm_radio}
+                    </>
+                  )
+                }</td
+              >
+            </tr>
+            <tr>
+              <td class="border p-4">USB</td>
+              <td class="border p-4" set:html={record?.usb} />
+            </tr>
+            <tr>
+              <td class="border p-4">Infrared port</td>
+              <td class="border p-4">
+                {
+                  record?.infrared_port === "Yes" ||
+                  record?.infrared_port === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.infrared_port}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.infrared_port}
+                    </>
+                  )
+                }</td
+              >
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Features table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Features</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="invert"
+                viewBox="0 0 512 512"
+                ><path
+                  d="M64 144h226.75a48 48 0 0090.5 0H448a16 16 0 000-32h-66.75a48 48 0 00-90.5 0H64a16 16 0 000 32zM448 368h-66.75a48 48 0 00-90.5 0H64a16 16 0 000 32h226.75a48 48 0 0090.5 0H448a16 16 0 000-32zM448 240H221.25a48 48 0 00-90.5 0H64a16 16 0 000 32h66.75a48 48 0 0090.5 0H448a16 16 0 000-32z"
+                ></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Sensors</td>
+              <td class="border p-4" set:html={record?.sensors} />
+            </tr>
+            <tr>
+              <td class="border p-4">Messaging</td>
+              <td class="border p-4" set:html={record?.messaging} />
+            </tr>
+            <tr>
+              <td class="border p-4">Browser</td>
+              <td class="border p-4" set:html={record?.browser} />
+            </tr>
+            <tr>
+              <td class="border p-4">Java</td>
+              <td class="border p-4">
+                {
+                  record?.java === "Yes" || record?.java === "yes" ? (
+                    <>
+                      <Image
+                        src={ok_icon}
+                        height={20}
+                        width={20}
+                        alt="ok icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.java}
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={cross_icon}
+                        height={20}
+                        width={20}
+                        alt="cross icon"
+                        class="inline-block"
+                      />{" "}
+                      {record?.java}
+                    </>
+                  )
+                }</td
+              >
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Battery table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>Battery</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                ><rect
+                  x="32"
+                  y="144"
+                  width="400"
+                  height="224"
+                  rx="45.7"
+                  ry="45.7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="square"
+                  stroke-miterlimit="10"
+                  stroke-width="32"></rect>
+                <rect
+                  x="85.69"
+                  y="198.93"
+                  width="154.31"
+                  height="114.13"
+                  rx="4"
+                  ry="4"
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-linecap="square"
+                  stroke-miterlimit="10"
+                  stroke-width="32"></rect>
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M480 218.67v74.66"></path>
+              </svg>
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Battery type</td>
+              <td class="border p-4" set:html={record?.battery_types} />
+            </tr>
+            <tr>
+              <td class="border p-4">Battery capacity</td>
+              <td class="border p-4" set:html={record?.battery_capacity} />
+            </tr>
+            <tr>
+              <td class="border p-4">Charging</td>
+              <td class="border p-4" set:html={record?.charging} />
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- More table -->
+        <table class="border-collapse w-full">
+          <div
+            class="table-head border p-4 flex justify-between items-center w-full"
+          >
+            <span>More</span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+                ><path
+                  d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"></path><path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M220 220h32v116"></path><path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M208 340h88"></path>
+                <path
+                  fill="currentColor"
+                  stroke="none"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M248 130a26 26 0 1026 26 26 26 0 00-26-26z"></path></svg
+              >
+            </span>
+          </div>
+
+          <tbody>
+            <tr>
+              <td class="border p-4">Made by</td>
+              <td class="border p-4" set:html={record?.made_by} />
+            </tr>
+            <tr>
+              <td class="border p-4">Color</td>
+              <td class="border p-4" set:html={record?.color} />
+            </tr>
+          </tbody>
+        </table>
+      </table>
+
+      <!-- pros and cons -->
+      <div
+        class="pros-and-cons w-full grid md:grid-cols-2 grid-cols-1 gap-5 my-5"
+      >
+        <!-- pros -->
+        <div class="pros text-left w-full">
+          <h2 class="border bg-green-800 text-white tracking-wider p-2">
+            Pros
+          </h2>
+
+          {
+            record?.pros.split("<br>").map((item: any) => {
+              return (
+                <div class="p-2 border">
+                  <Image
+                    src={ok_icon}
+                    alt="ok icon"
+                    height="20"
+                    width="20"
+                    class="inline-block"
+                  />{" "}
+                  {item.trim()}
+                  <br />
+                </div>
+              );
+            })
+          }
+        </div>
+
+        <!-- cons -->
+        <div class="cons text-left w-full">
+          <h2 class="border bg-red-600 text-white tracking-wider p-2">Cons</h2>
+
+          {
+            record?.cons.split("<br>").map((item: any) => {
+              return (
+                <div class="p-2 border">
+                  <Image
+                    src={cross_icon}
+                    alt="cross icon"
+                    height="20"
+                    width="20"
+                    class="inline-block"
+                  />{" "}
+                  {item.trim()}
+                  <br />
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+      <!-- highlights -->
+      {
+        record?.highlights && (
+          <div class="highlights mb-5">
+            <h1 class="text-2xl  font-bold border-b-2 inline-block my-5">
+              Highlights
+            </h1>
+            <p class="leading-8 text-justify" set:html={record?.highlights} />
+          </div>
+        )
+      }
+    </div>
+  </main>
+</Layout>
+<style lang="scss">
+  .breadcrumb {
+    svg {
+      height: 12px !important;
+      width: 12px !important;
+    }
+  }
+  #progress-bar {
+    transition: ease-in-out 2s;
+  }
+  .product-main-feature {
+    .feature-info-list-container {
+      .feature-info-list {
+        li {
+          display: flex;
+
+          align-items: center;
+          gap: 10px;
+          margin: 10px 0;
+          padding: 8px;
+          background-color: var(--secondary-color);
+          color: white;
+          position: relative;
+          strong {
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 44px;
+            transition: 0.3s;
+            background: #07613a;
+            z-index: 1;
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
+          svg {
+            height: 30px;
+            width: 30px;
+            z-index: 3;
+          }
+          .feature-info {
+            z-index: 3;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+    z-index: 3;
+  }
+  h1 {
+    font-family: "Gothic A1", sans-serif !important;
+    position: relative;
+    padding-bottom: 10px;
+    color: #5f5f5f;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 80px;
+      bottom: -2px;
+      left: 0;
+      background: var(--secondary-color);
+    }
+  }
+  .product-others-features {
+    table {
+      margin: 10px 0;
+      tr {
+        td:nth-child(1) {
+          font-weight: 600;
+          width: 200px;
+        }
+        &:nth-child(even) {
+          background-color: rgb(232, 252, 232);
+        }
+      }
+    }
+
+    .table-head {
+      background-color: var(--secondary-color);
+      color: white;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      font-size: 20px;
+    }
+  }
+  .pros-and-cons {
+    .pros {
+      div:nth-child(odd) {
+        background-color: rgb(232, 252, 232);
+      }
+    }
+    .cons {
+      div:nth-child(odd) {
+        background-color: rgb(252, 233, 232);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .product-others-features {
+      table {
+        tr {
+          td:nth-child(1) {
+            width: 125px !important;
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<script async defer>
+  window.addEventListener("load", function () {
+    const thumbnail = document.querySelector("#thumbnail");
+    const imgExtendIcon = document.querySelector(".img-extend");
+
+    const fullScreenImgContainer = document.querySelector(
+      ".full-screen-img-container"
+    );
+    const fullScreenImgContainerCloseIcon = document.querySelector(
+      ".full-screen-img-container .close-icon"
+    );
+    const sub_images = document.querySelectorAll(".imgs");
+    const progressBar = document.querySelector("#progress-bar");
+
+    const counterElement = document.querySelector(".progress-number-container");
+
+    // image clickable function
+    sub_images.forEach((img) => {
+      img.addEventListener("click", () => {
+        thumbnail.src = img.src;
+      });
+    });
+
+    const handleIntersection = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // The container is currently visible
+
+          // Parse targetNumber to a float
+          const targetNumber = parseFloat(progressBar.dataset.rating);
+
+          // Set the animation duration and interval
+          const duration = 1500; // in milliseconds
+          const interval = 50; // in milliseconds
+
+          // Calculate the number increment per interval
+          const increment = (targetNumber / duration) * interval;
+
+          // Initialize the current number
+          let currentNumber = 0;
+
+          // Set up the interval function
+          const intervalId = setInterval(function () {
+            // Update the current number
+            currentNumber += increment;
+
+            // Check if the target number is reached
+            if (currentNumber >= targetNumber) {
+              currentNumber = targetNumber;
+              clearInterval(intervalId); // Stop the interval when the target is reached
+            }
+
+            // Update the content of the element with the current number, rounded to one decimal place
+            counterElement.textContent = currentNumber.toFixed(1);
+          }, interval);
+
+          progressBar.style.width = targetNumber * 10 + "%";
+        } else {
+          // The container is not visible
+          progressBar.style.width = 0 + "%";
+        }
+      });
+    };
+
+    // Options for the Intersection Observer
+    const options = {
+      root: null, // Use the viewport as the root
+      rootMargin: "0px", // No margin around the root
+      threshold: 0.5, // Trigger when at least 50% of the container is visible
+    };
+
+    // Create an intersection observer with the callback and options
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    // Start observing the container
+    observer.observe(progressBar);
+
+    function addImage() {
+      // Create a new image element
+      let imgElement = document.createElement("img");
+
+      // Set the source (URL) for the image
+      imgElement.src = thumbnail.src;
+
+      // Set optional attributes such as alt text
+      imgElement.alt = thumbnail.alt;
+
+      // Set optional styles or other attributes
+      imgElement.width = "600";
+      imgElement.height = "600";
+
+      // Set the loading attribute to 'lazy' for lazy loading
+      imgElement.loading = "lazy";
+
+      fullScreenImgContainer.classList.add("w-full", "h-[100vh]");
+      fullScreenImgContainerCloseIcon.classList.remove("hidden");
+      fullScreenImgContainerCloseIcon.classList.add("block");
+
+      // Add an event listener to handle the 'load' event asynchronously
+      imgElement.addEventListener("load", function () {
+        // Append the image element to a specific HTML element, for example, the body
+
+        fullScreenImgContainer.appendChild(imgElement);
+      });
+
+      fullScreenImgContainerCloseIcon.addEventListener("click", () => {
+        fullScreenImgContainer.classList.remove("w-full", "h-[80vh]");
+        fullScreenImgContainerCloseIcon.classList.add("hidden");
+        fullScreenImgContainerCloseIcon.classList.remove("block");
+        fullScreenImgContainer.removeChild(imgElement);
+      });
+    }
+
+    thumbnail.addEventListener("click", () => {
+      addImage();
+    });
+
+    imgExtendIcon.addEventListener("click", () => {
+      addImage();
+    });
+  });
+</script>

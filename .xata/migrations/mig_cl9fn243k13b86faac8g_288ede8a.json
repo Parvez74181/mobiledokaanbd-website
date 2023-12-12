@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fn243k13b86faac8g",
+  "parentID": "mig_cl9fmvq5ds5tnm04i78g",
+  "checksum": "1:288ede8a73c3fbb17381f2f3ad0c49354a3b2805d6babdc9cf833cfe1b7e0a91",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "GPRS",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

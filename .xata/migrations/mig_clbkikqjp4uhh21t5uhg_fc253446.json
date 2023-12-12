@@ -1,0 +1,14 @@
+{
+  "id": "mig_clbkikqjp4uhh21t5uhg",
+  "parentID": "mig_clbkijc9uul89v5s0vog",
+  "checksum": "1:fc25344660c5393353e29281967756f46f5f6055bf84fa7e634f37ca3b7cb146",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "bands_5g",
+        "oldName": "5g_bands",
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g22k3k13b86faaeg0",
+  "parentID": "mig_cl9g20k3k13b86faaef0",
+  "checksum": "1:7674dfdb16d129676b62d9943b48167c08f1c24c8ba3272c9ec569d769cb1fe0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "4g_bands",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { AstroSeo } from "@astrolib/seo";
+import { Schema } from "astro-seo-schema";
+import { Image } from "astro:assets";
+import { XataClient } from "../xata";
+import test from "../../public/404-svg.svg";
+import compareIcon from "../../public/compare.svg";
+
+export interface Props {
+  title: string;
+
+  image?: string;
+
+  createdAt?: Number;
+}
+const url = Astro.url.href;
+
+const { title, image, createdAt } = Astro.props;
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+let smartphones: any, smartbands: any, smartwathces: any, tablets: any;
+
+try {
+  const SmartphonesData = xata.db.Posts.filter({
+    "types.type": { $iContains: "Smartphones" },
+  })
+    .sort("xata.createdAt", "desc")
+    .select([
+      "id",
+      "title",
+      "slug",
+      "images",
+      "official_price",
+      "unofficial_price",
+      "international_price",
+    ])
+
+    .getPaginated({
+      pagination: {
+        size: 6,
+      },
+    });
+
+  const SmartBandsData = xata.db.Posts.filter({
+    "types.type": { $iContains: "Smart Bands" },
+  })
+    .sort("xata.createdAt", "desc")
+    .select([
+      "id",
+      "title",
+      "slug",
+      "images",
+      "official_price",
+      "unofficial_price",
+      "international_price",
+    ])
+    .getPaginated({
+      pagination: {
+        size: 6,
+      },
+    });
+  const SmartWatchesData = xata.db.Posts.filter({
+    "types.type": { $iContains: "Smart Watches" },
+  })
+    .sort("xata.createdAt", "desc")
+    .select([
+      "id",
+      "title",
+      "slug",
+      "images",
+      "official_price",
+      "unofficial_price",
+      "international_price",
+    ])
+    .getPaginated({
+      pagination: {
+        size: 6,
+      },
+    });
+  const TabletsData = xata.db.Posts.filter({
+    "types.type": { $iContains: "Tablets" },
+  })
+    .sort("xata.createdAt", "desc")
+    .select([
+      "id",
+      "title",
+      "slug",
+      "images",
+      "official_price",
+      "unofficial_price",
+      "international_price",
+    ])
+    .getPaginated({
+      pagination: {
+        size: 6,
+      },
+    });
+
+  [smartphones, smartbands, smartwathces, tablets] = await Promise.all([
+    SmartphonesData,
+    SmartBandsData,
+    SmartWatchesData,
+    TabletsData,
+  ]);
+} catch (error) {
+  console.log(error);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#049e3f" />
+    <meta name="msapplication-TileColor" content="#049e3f" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Parvez" />
+
+    <meta name="robots" content="index,follow" />
+
+    <!-- open graph -->
+    <AstroSeo
+      title={title}
+      description={title
+        ? `${title} Price in Bangladesh ${new Date().getFullYear()}. Full specification of ${title} with ✓Official ✓Unofficial BD Price ✓Rating ✓Review ✓Compare.`
+        : "Explore the latest prices for motorcycles, bikes, and mobile phones in Bangladesh 2023 at MobilePriceBD. Get official and unofficial updates on MobilePriceBD.10mblogs.xyz. Discover the latest Mobile BD prices, including Android, smartphones, feature phones, with updated prices, full specifications, and reviews at MobilePriceBD."}
+      canonical={url}
+      openGraph={{
+        url,
+        title,
+        description: `${title} Price in Bangladesh ${new Date().getFullYear()}. Full specification of ${title} with ✓Official ✓Unofficial BD Price ✓Rating ✓Review ✓Compare.`,
+        images: [
+          {
+            url: image && image,
+            width: 800,
+            height: 600,
+            alt: title,
+            type: "image/webp",
+          },
+        ],
+        site_name: "https://mobilepricebd.10mblogs.xyz",
+      }}
+      twitter={{
+        handle: "@10mblogs",
+        site: "@10mblogs",
+        cardType: `${title} Price in Bangladesh ${new Date().getFullYear()}. Full specification of ${title} with ✓Official ✓Unofficial BD Price ✓Rating ✓Review ✓Compare.`,
+      }}
+    />
+
+    {/* google indexing meta tag */}
+    <meta
+      name="google-site-verification"
+      content="t2bQ1p8cAJTr0lMcrtGMULZirb0GlVA_W76s0VcgRnI"
+    />
+
+    {/* bing indexing meta tag */}
+    <meta name="msvalidate.01" content="CAE2B85CC2AA097D750003ECA98D55AA" />
+
+    <style lang="scss">
+      @font-face {
+        font-family: "Gothic A1";
+        src: url("../fonts/GothicA1-Regular.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("../fonts/Inter-Regular.ttf") format("truetype");
+      }
+      :root {
+        --primary-color: #fff;
+        --secondary-color: #0a7e49;
+      }
+      html {
+        background-color: #e2e2e2;
+      }
+      body {
+        background-color: #fff;
+        font-family: "Inter", sans-serif !important;
+      }
+
+      aside {
+        h1 {
+          font-weight: 900;
+          position: relative;
+          padding-bottom: 10px;
+          font-size: 24px;
+          color: #5f5f5f;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            bottom: -2px;
+            left: 0;
+            background: var(--secondary-color);
+          }
+        }
+        .card {
+          h2,
+          h3 {
+            text-align: center;
+          }
+        }
+      }
+
+      .compareContainer,
+      .compareIcon {
+        transition: 0.3s;
+      }
+    </style>
+
+    <!-- breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.mobilepricebd.10mblogs.xyz/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://www.mobilepricebd.10mblogs.xyz/about"
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Contact Us",
+            "item": "https://www.mobilepricebd.10mblogs.xyz/contact"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Sitemap",
+            "item": "https://www.mobilepricebd.10mblogs.xyz/sitemap-index.xml"
+          }
+        ]
+      }
+    </script>
+
+    <!-- BlogPosting -->
+    {
+      createdAt && (
+        <Schema
+          item={{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: title,
+            image,
+            author: {
+              "@type": "Person",
+              name: "Parvez",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "mobilepricebd.10mblogs.xyz",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://res.cloudinary.com/drxcxwm7x/image/upload/v1688977462/logo_paqhak.png",
+              },
+            },
+            datePublished: createdAt.toString(),
+          }}
+        />
+      )
+    }
+  </head>
+
+  <body class="container mx-auto border shadow-lg">
+    <Navbar />
+    <div
+      class="flex justify-between flex-col xl:flex-row relative w-full mt-24"
+    >
+      <slot />
+
+      <aside class="w-full px-5 xl:w-[30%]">
+        <!-- search bar -->
+        <div class="search-bar-container">
+          <h1 class="border-b-2">Search</h1>
+
+          <div
+            class="search-bar flex justify-between items-center relative my-5"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500 absolute left-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
+            </svg>
+            <input
+              type="search"
+              class="search-input block w-full p-3 ps-10 text-gray-900 border border-gray-300 rounded-full focus:ring-green-600 focus:border-green-600 focus:outline-none"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+
+        <!-- new released phones -->
+        <div class="new-released-phones">
+          {
+            smartphones.records.length > 0 && (
+              <>
+                <h1 class="border-b-2">New Released Phones</h1>
+                <div class="wrapper my-5 grid grid-cols-2 md:grid-cols-6 xl:grid-cols-3 gap-5">
+                  {smartphones.records.map((record: any) => {
+                    return (
+                      <>
+                        <div class="card border p-1 hover:text-green-600 rounded">
+                          <a
+                            href={`/${record.slug}`}
+                            class="flex flex-col justify-between items-center"
+                          >
+                            <Image
+                              src={record.images.split(",")[0]}
+                              width={120}
+                              height={120}
+                              alt={record.title}
+                              class="hover:opacity-80 transition-all h-[100px] w-[100px] object-contain"
+                            />
+                            <h2 class="name text-sm hover:underline mb-1 ">
+                              {record.title}
+                            </h2>
+                            {record?.official_price ? (
+                              <h3 class="price text-center text-xs  text-green-600">
+                                ৳ {record?.official_price.split("<br>")[0]}
+                              </h3>
+                            ) : record?.unofficial_price ? (
+                              <h3 class="price text-center text-xs  text-green-600">
+                                ৳ {record?.unofficial_price.split("<br>")[0]}
+                              </h3>
+                            ) : (
+                              <h3 class="price text-center text-xs  text-green-600">
+                                ৳ {record?.international_price.split("<br>")[0]}
+                              </h3>
+                            )}
+                          </a>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </>
+            )
+          }
+        </div>
+
+        <!-- smartbands -->
+        <div class="smartbands">
+          {
+            smartbands.records.length > 0 && (
+              <>
+                <h1 class="border-b-2">New Smartbands</h1>
+                <div class="wrapper my-5 grid grid-cols-2 md:grid-cols-6 xl:grid-cols-3 gap-5">
+                  {smartbands.records.map((record: any) => {
+                    return (
+                      <>
+                        <div class="card border p-1 hover:text-green-600 rounded">
+                          <a
+                            href={`/${record.slug}`}
+                            class="flex justify-between items-center flex-col"
+                          >
+                            <Image
+                              src={record.images.split(",")[0]}
+                              width={120}
+                              height={120}
+                              alt={record.title}
+                              class="hover:opacity-80 transition-all h-[100px] w-[100px] object-contain"
+                            />
+                            <h2 class="name text-sm hover:underline mb-1">
+                              {record.title}
+                            </h2>
+                            {record?.official_price ? (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record?.official_price.split("<br>")[0]}
+                              </h3>
+                            ) : (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record.unofficial_price.split("<br>")[0]}
+                              </h3>
+                            )}
+                          </a>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </>
+            )
+          }
+        </div>
+
+        <!-- smartwathces -->
+        <div class="smartwathces">
+          {
+            smartwathces.records.length > 0 && (
+              <>
+                <h1 class="border-b-2">New Smartwathces</h1>
+                <div class="wrapper my-5 grid grid-cols-2 md:grid-cols-6 xl:grid-cols-3 gap-5">
+                  {smartwathces.records.map((record: any) => {
+                    return (
+                      <>
+                        <div class="card border p-1 hover:text-green-600 rounded">
+                          <a
+                            href={`/${record.slug}`}
+                            class="flex justify-between items-center flex-col"
+                          >
+                            <Image
+                              src={record.images.split(",")[0]}
+                              width={120}
+                              height={120}
+                              alt={record.title}
+                              class="hover:opacity-80 transition-all h-[100px] w-[100px] object-contain"
+                            />
+                            <h2 class="name text-sm hover:underline mb-1">
+                              {record.title}
+                            </h2>
+                            {record?.official_price ? (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record?.official_price.split("<br>")[0]}
+                              </h3>
+                            ) : (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record.unofficial_price.split("<br>")[0]}
+                              </h3>
+                            )}
+                          </a>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </>
+            )
+          }
+        </div>
+
+        <!-- tablets -->
+        <div class="tablets">
+          {
+            tablets.records.length > 0 && (
+              <>
+                <h1 class="border-b-2">New Tablets</h1>
+                <div class="wrapper my-5 grid grid-cols-2 md:grid-cols-6 xl:grid-cols-3 gap-5">
+                  {tablets.records.map((record: any) => {
+                    return (
+                      <>
+                        <div class="card border p-1 hover:text-green-600 rounded">
+                          <a
+                            href={`/${record.slug}`}
+                            class="flex justify-between items-center flex-col"
+                          >
+                            <Image
+                              src={record.images.split(",")[0]}
+                              width={120}
+                              height={120}
+                              alt={record.title}
+                              class="hover:opacity-80 transition-all h-[100px] w-[100px] object-contain"
+                            />
+                            <h2 class="name text-sm hover:underline mb-1">
+                              {record.title}
+                            </h2>
+                            {record?.official_price ? (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record?.official_price.split("<br>")[0]}
+                              </h3>
+                            ) : (
+                              <h3 class="price text-xs text-center text-green-600">
+                                ৳ {record.unofficial_price.split("<br>")[0]}
+                              </h3>
+                            )}
+                          </a>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </>
+            )
+          }
+        </div>
+      </aside>
+    </div>
+
+    <Footer />
+
+    <script
+      is:inline
+      defer
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+
+    <script defer async is:inline>
+      window.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.querySelector(".search-input");
+
+        // searchHandler
+        searchInput.addEventListener("keyup", (e) => {
+          if (e.key === "Enter") {
+            let searchText = e.target.value.trim().toLowerCase();
+
+            if (searchText) open(`/search?search=${searchText}`, "_self");
+            e.target.value = "";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

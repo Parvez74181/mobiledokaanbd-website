@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fnni5ds5tnm04i7ag",
+  "parentID": "mig_cl9fnlc3k13b86faacdg",
+  "checksum": "1:5855a4488004adf2fc196e40ec295fb80c3ce1ae595dd9b4ef58ac0d96c389a2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Features",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3ec3k13b86faaen0",
+  "parentID": "mig_cl9g3cbprbth1akiivig",
+  "checksum": "1:44fc2272795d921d3c4137d705db2526bb4f6c281dec06a047fd7babad9e12f0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "primary_camera",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

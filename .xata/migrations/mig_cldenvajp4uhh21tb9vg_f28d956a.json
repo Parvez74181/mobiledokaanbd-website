@@ -1,0 +1,16 @@
+{
+  "id": "mig_cldenvajp4uhh21tb9vg",
+  "parentID": "mig_cldenq8on9v9l0hvnnmg",
+  "checksum": "1:f28d956a47b5443a9638c565cc86a3c702f644dc24d56894641c178c8cee9e2b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "official_price",
+          "type": "int"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

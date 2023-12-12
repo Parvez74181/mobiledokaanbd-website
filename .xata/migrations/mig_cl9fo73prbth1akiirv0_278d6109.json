@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fo73prbth1akiirv0",
+  "parentID": "mig_cl9fo5a5ds5tnm04i7bg",
+  "checksum": "1:278d61091f55729a6a24073fa11d13f4c32d6f30b7f4703e70cf434350721556",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "GPU",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

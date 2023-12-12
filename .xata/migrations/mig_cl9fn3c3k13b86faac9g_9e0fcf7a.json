@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fn3c3k13b86faac9g",
+  "parentID": "mig_cl9fn243k13b86faac8g",
+  "checksum": "1:9e0fcf7aad10aa894d05bedffb83d2f2159ba7e52d40346c087a4a7e0c1bca1d",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "EDGE",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9imu43k13b86faaocg",
+  "parentID": "mig_cl9imoq5ds5tnm04iir0",
+  "checksum": "1:8ad1923c68b8fff0ed092de52ad7c9499277e7e87482d043f508a0f18a0308bd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "token",
+          "type": "text"
+        },
+        "table": "AdminTokens"
+      }
+    }
+  ]
+}

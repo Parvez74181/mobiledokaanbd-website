@@ -1,0 +1,8 @@
+{
+  "databaseURL": "https://Md-Parvez-s-workspace-m2fcko.eu-west-1.xata.sh/db/Mobile-info",
+  "codegen": {
+    "output": "src/xata.js",
+    "moduleType": "esm",
+    "declarations": true
+  }
+}

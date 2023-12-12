@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fo5a5ds5tnm04i7bg",
+  "parentID": "mig_cl9fnsrprbth1akiirmg",
+  "checksum": "1:eab00bf224932e7f0d9fa1fe8d6c33613cf0da35108e6f10aef5baf7fd066d9a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "CPU",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

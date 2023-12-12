@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g1e3prbth1akiivag",
+  "parentID": "mig_cl9g1ck3k13b86faae90",
+  "checksum": "1:724a11a1504657a3345f994ded989f57235b0c7d28565dd51bdcb122128ab189",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "battery",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

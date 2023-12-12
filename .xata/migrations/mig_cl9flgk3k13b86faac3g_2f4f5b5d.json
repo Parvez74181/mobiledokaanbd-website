@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9flgk3k13b86faac3g",
+  "parentID": "mig_cl9fle3prbth1akiir9g",
+  "checksum": "1:2f4f5b5d65e8401a2ea0f5c4ffc7a612232ec0796cd416fe9c80e60b9f1de1f6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "UnOfficial",
+          "type": "int"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

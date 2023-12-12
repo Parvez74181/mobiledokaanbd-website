@@ -1,0 +1,17 @@
+{
+  "id": "mig_cl9g4tbprbth1akiivpg",
+  "parentID": "mig_cl9g4qq5ds5tnm04i8qg",
+  "checksum": "1:d924db8bc864d08cd9ac8acace34284d59aebac0c95ae5df018c9c31630b0620",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "java",
+          "type": "string",
+          "defaultValue": "No"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

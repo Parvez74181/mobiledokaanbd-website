@@ -1,0 +1,399 @@
+{
+  "id": "mig_cl9fvb3prbth1akiitng",
+  "parentID": "mig_cl9fumbprbth1akiitcg",
+  "checksum": "1:f6c9fa7ce5df0794bd332e5cb49701dcc190b7f8ae281339f420ff110f70d981",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "Official",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "UnOfficial",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Released",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "OS",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Display",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Camera",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Processor",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Battery",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Announced",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Status",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Technology",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "2G-bands",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "3G-bands",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "4G-bands",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "5G-bands",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Speed",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "GPRS",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "EDGE",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Dimensions",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Weight",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Build",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "SIM",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Type",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Resolution",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Multitouch",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Protection",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Display-Features",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Chipset",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "CPU",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "GPU",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Card-slot",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Internal",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "RAM",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Primary-camera",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Secondary-camera",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Camera-Features",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Video",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Alert-types",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Loudspeaker",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "3-5-mm-jack",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "WLAN",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Bluetooth",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "GPS",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "NFC",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "FM-radio",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "USB",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Infrared-port",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Battery-type",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Battery-capacity",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Charging",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Made-by",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Color",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Pros",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Cons",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Highlights",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Ratings",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "Thumbnail",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "2nd-img",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "3rd-img",
+        "table": "Posts"
+      }
+    },
+    {
+      "removeColumn": {
+        "column": "meta-tags",
+        "table": "Posts"
+      }
+    },
+    {
+      "renameColumn": {
+        "newName": "title",
+        "oldName": "Title",
+        "table": "Posts"
+      }
+    },
+    {
+      "renameColumn": {
+        "newName": "description",
+        "oldName": "meta-description",
+        "table": "Posts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "slug",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "pubDate",
+          "type": "datetime"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

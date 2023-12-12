@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fq2rprbth1akiisqg",
+  "parentID": "mig_cl9fpdjprbth1akiispg",
+  "checksum": "1:d2d5e973a8d227f16b91af8685ac302d036f0c151d7e6c81161e11cc09193da1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "WLAN",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

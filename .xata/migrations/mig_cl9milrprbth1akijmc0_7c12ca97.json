@@ -1,0 +1,14 @@
+{
+  "id": "mig_cl9milrprbth1akijmc0",
+  "parentID": "mig_cl9imu43k13b86faaocg",
+  "checksum": "1:7c12ca97071459549d785c42b625d4211a02a5245443de24db2b8c10f827c54a",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "front_camera",
+        "oldName": "primary_camera",
+        "table": "Posts"
+      }
+    }
+  ]
+}

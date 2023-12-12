@@ -1,0 +1,22 @@
+/page-sitemap.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow
+  
+/types-sitemap.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow  
+
+/brands-sitemap.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow
+
+/price-range-sitemap.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow
+  
+/post-sitemap.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow
+/sitemap_index.xml
+  cache-control: public, max-age=0, must-revalidate
+  x-robots-tag: noindex, follow

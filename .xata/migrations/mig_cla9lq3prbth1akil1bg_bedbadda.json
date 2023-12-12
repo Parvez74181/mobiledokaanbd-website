@@ -1,0 +1,16 @@
+{
+  "id": "mig_cla9lq3prbth1akil1bg",
+  "parentID": "mig_cla9loa5ds5tnm04ku5g",
+  "checksum": "1:bedbadda97fcd9da1d31135041f3768793e4c4c7a1151db6956790be9479cb7c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ratings",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g35i5ds5tnm04i8jg",
+  "parentID": "mig_cl9g32rprbth1akiivfg",
+  "checksum": "1:855c8054b120a59a3d21d80e6e4d3c86a8f12e9c12c58f1b805673cf8d761bcd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "chipset",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

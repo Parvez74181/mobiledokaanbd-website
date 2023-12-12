@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3043k13b86faael0",
+  "parentID": "mig_cl9g2uc3k13b86faaek0",
+  "checksum": "1:bff51437e37b6f575a62d4d3040ac3b4d7caf7903ef36b4dce56f923a5435a14",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "protection",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

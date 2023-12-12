@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g43k3k13b86faaep0",
+  "parentID": "mig_cl9g42i5ds5tnm04i8pg",
+  "checksum": "1:e9552f0681abd86fbfcf01e7f2713c40b111529e7aced06ba754f391fcb9fda9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "gps",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

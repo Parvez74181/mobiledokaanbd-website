@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g37bprbth1akiivgg",
+  "parentID": "mig_cl9g35i5ds5tnm04i8jg",
+  "checksum": "1:ce2b1cfd34fbaee326033cb47d82dd550494aa082fa00b72580efdb21c374c54",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "cpu",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

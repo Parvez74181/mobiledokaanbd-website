@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9flrs3k13b86faac4g",
+  "parentID": "mig_cl9flojprbth1akiirag",
+  "checksum": "1:d642f5eb297b941e45997f285355c058a07eabeb0d4bafbbba0c422ac72d0340",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "OS",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

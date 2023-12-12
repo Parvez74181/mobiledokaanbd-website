@@ -1,0 +1,13 @@
+{
+  "id": "mig_cldenos9uul89v5s6nf0",
+  "parentID": "mig_clc4lrgon9v9l0hvi8rg",
+  "checksum": "1:ea86fa5f220acf47f1d38c5f5e85315c5334cbaf6e3ed393fcf65ff5ef7f156f",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "official_price",
+        "table": "Posts"
+      }
+    }
+  ]
+}

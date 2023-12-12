@@ -1,0 +1,353 @@
+---
+export const prerender = true;
+import { Image } from "astro:assets";
+import Logo from "../../public/logo.svg";
+import { XataClient } from "../xata";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+let types: any[];
+let brands: any[];
+
+try {
+  [types, brands] = await Promise.all([
+    xata.db.Types.getAll(),
+    xata.db.Brands.getAll(),
+  ]);
+} catch (error) {
+  console.log(error);
+}
+---
+
+<footer class="text-gray-600 bg-gray-50 body-font border-t-2 mt-5">
+  <div
+    class="container p-5 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+  >
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <a
+        href="/"
+        class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+      >
+        <Image
+          src={Logo}
+          alt="MobilePriceBD Logo"
+          height={80}
+          width={280}
+          class="object-contains w-[200px] h-[35px] xl:w-[280px] xl:h-[49px]"
+        />
+      </a>
+      <p class="mt-5 text-xl text-gray-500">
+        Get Latest & Updated Mobile Price in Bangladesh.
+      </p>
+    </div>
+
+    <!-- links -->
+    <div
+      class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 text-left"
+    >
+      <!-- Navlinks -->
+      <div class="lg:w-1/4 w-1/2 px-4">
+        <h2
+          class="title-font font-medium text-gray-900 tracking-widest text-xl mb-3"
+        >
+          Navlinks
+        </h2>
+        <ul class="list-none mb-10">
+          <li>
+            <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+          </li>
+          <li>
+            <a href="/about" class="text-gray-600 hover:text-gray-800">About</a>
+          </li>
+          <li>
+            <a href="/contact" class="text-gray-600 hover:text-gray-800"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://10mblogs.xyz"
+              class="text-gray-600 hover:text-gray-800">Blogs</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://software.10mblogs.xyz"
+              class="text-gray-600 hover:text-gray-800">Free Softwares</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://10mblogs.xyz/free-tools"
+              class="text-gray-600 hover:text-gray-800">Free Tools</a
+            >
+          </li>
+          <li>
+            <a href="/disclaimer" class="text-gray-600 hover:text-gray-800"
+              >Disclaimer</a
+            >
+          </li>
+          <!-- <li>
+            <a href="/disclouser" class="text-gray-600 hover:text-gray-800"
+              >Disclouser</a
+            >
+          </li> -->
+          <li>
+            <a href="/privacy" class="text-gray-600 hover:text-gray-800"
+              >Privacy Policy</a
+            >
+          </li>
+          <li>
+            <a
+              href="/sitemap_index.xml"
+              class="text-gray-600 hover:text-gray-800">Sitemap</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- types -->
+      <div class="lg:w-1/4 w-1/2 px-4">
+        <h2
+          class="title-font font-medium text-gray-900 tracking-widest text-xl mb-3"
+        >
+          Types
+        </h2>
+        <ul class="list-none mb-10">
+          {
+            types &&
+              types.map((item: any) => {
+                return (
+                  <>
+                    <li>
+                      <a
+                        href={`/types?type=${item.type
+                          .toLowerCase()
+                          .split(" ")
+                          .join("-")}`}
+                        class="text-gray-600 hover:text-gray-800"
+                      >
+                        {item.type}
+                      </a>
+                    </li>
+                  </>
+                );
+              })
+          }
+        </ul>
+      </div>
+
+      <!-- brands -->
+      <div class="lg:w-1/4 w-1/2 px-4">
+        <h2
+          class="title-font font-medium text-gray-900 tracking-widest text-xl mb-3"
+        >
+          Brands
+        </h2>
+        <ul class="list-none mb-10">
+          {
+            brands &&
+              brands.map((item: any) => {
+                return (
+                  <>
+                    <li>
+                      <a
+                        href={`/brands?brand=${item.brand
+                          .toLowerCase()
+                          .split(" ")
+                          .join("-")}`}
+                        class="text-gray-600 hover:text-gray-800"
+                      >
+                        {item.brand}
+                      </a>
+                    </li>
+                  </>
+                );
+              })
+          }
+        </ul>
+      </div>
+
+      <!-- Price -->
+      <div class="lg:w-1/4 w-1/2 px-4">
+        <h2
+          class="title-font font-medium text-gray-900 tracking-widest text-xl mb-3"
+        >
+          Price Range
+        </h2>
+        <ul class="list-none mb-10">
+          <!-- Under 5,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.under-5000-tk"
+              class="text-gray-600 hover:text-gray-800">Under 5,000 Tk</a
+            >
+          </li>
+          <!-- 5,000-10,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.5000-10000-tk"
+              class="text-gray-600 hover:text-gray-800">5,000-10,000 Tk</a
+            >
+          </li>
+          <!-- 10,000-15,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.10000-15000-tk"
+              class="text-gray-600 hover:text-gray-800">10,000-15,000 Tk</a
+            >
+          </li>
+          <!-- 15,000-20,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.15000-20000-tk"
+              class="text-gray-600 hover:text-gray-800">15,000-20,000 Tk</a
+            >
+          </li>
+          <!-- 20,000-30,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.20000-30000-tk"
+              class="text-gray-600 hover:text-gray-800">20,000-30,000 Tk</a
+            >
+          </li>
+          <!-- 30,000-40,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.30000-40000-tk"
+              class="text-gray-600 hover:text-gray-800">30,000-40,000 Tk</a
+            >
+          </li>
+          <!-- 40,000-50,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.40000-50000-tk"
+              class="text-gray-600 hover:text-gray-800">40,000-50,000 Tk</a
+            >
+          </li>
+          <!-- 50,000-60,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.50000-60000-tk"
+              class="text-gray-600 hover:text-gray-800">50,000-60,000 Tk</a
+            >
+          </li>
+          <!-- 60,000-70,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.60000-70000-tk"
+              class="text-gray-600 hover:text-gray-800">60,000-70,000 Tk</a
+            >
+          </li>
+          <!-- 70,000-80,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.70000-80000-tk"
+              class="text-gray-600 hover:text-gray-800">70,000-80,000 Tk</a
+            >
+          </li>
+          <!-- 80,000-90,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.80000-90000-tk"
+              class="text-gray-600 hover:text-gray-800">80,000-90,000 Tk</a
+            >
+          </li>
+          <!-- 90,000-1,00,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.90000-100000-tk"
+              class="text-gray-600 hover:text-gray-800">90,000-1,00,000 Tk</a
+            >
+          </li>
+          <!-- Above 1,00,000 Tk -->
+          <li>
+            <a
+              href="/filter?filters=price.above-100000-tk"
+              class="text-gray-600 hover:text-gray-800">Above 1,00,000 Tk</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom part -->
+  <div class="bg-gray-200">
+    <div
+      class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+    >
+      <p class="text-gray-500 text-xl text-center sm:text-left">
+        © {new Date().getFullYear()} MobilePriceBD™ . All Rights Reserved.
+      </p>
+
+      <!-- <span
+        class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+      >
+        <a class="text-gray-500">
+          <svg
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+            ></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+            ></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+            ></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="0"
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="none"
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+            ></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span> -->
+    </div>
+  </div>
+</footer>

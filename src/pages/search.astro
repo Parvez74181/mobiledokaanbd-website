@@ -1,0 +1,257 @@
+---
+export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import infoIcon from "../../public/info-icon.svg";
+import Button from "../components/Button.astro";
+import notFound from "../../public/404-svg.svg";
+import { XataClient } from "../xata";
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+let records: any;
+let totalRecords: any;
+const page = Number(Astro.url.searchParams.get("page")) || 1;
+const pageSize = 20;
+
+const searchQuery = Astro.url.searchParams.get("search");
+
+try {
+  const res = await xata.search.all(searchQuery, {
+    tables: [
+      {
+        table: "Posts",
+        target: [
+          "id",
+          "title",
+          "slug",
+          "images",
+          "released",
+          "os",
+          "display",
+          "camera",
+          "ram",
+          "battery",
+          "official_price",
+          "unofficial_price",
+          "international_price",
+        ],
+      },
+    ],
+    page: {
+      size: pageSize,
+      offset: ((page || 1) - 1) * pageSize,
+    },
+  });
+
+  records = res.records;
+  totalRecords = res.totalCount;
+} catch (error) {
+  console.log(error);
+}
+
+const pageCount = Math.ceil(Number(totalRecords) / pageSize);
+
+let paginationItems: String[] = [];
+
+// insert prev icon
+paginationItems.push(
+  `<li ><a class="cursor-pointer flex justify-center items-center w-9 h-9 ${
+    page <= 1 && "opacity-30 cursor-default select-none"
+  }" id='pagination-item' ${
+    page > 1 && `href=?type=${searchQuery}&page=${page - 1}`
+  }>
+    <img  src="/dropdown-icon.svg" title="prev" height={15} width={15} loading='lazy' class="rotate-90" decoding='async' alt="prev button"/></a></li>`
+);
+
+for (let i = page - 3; i <= page + 3; i++) {
+  // if i is negative number then continue the for loop
+  if (i < 1) continue;
+  else if (i > pageCount) break; // if i is greater then pageCount then break the for loop
+
+  paginationItems.push(
+    ` <li ><a class="cursor-pointer flex justify-center items-center w-9 h-9 rounded-full hover:bg-green-700 hover:text-white hover:shadow-lg ${
+      i === page && "bg-green-600 text-white current"
+    }" id='pagination-item' href='?type=${searchQuery}&page=${i}'>${i}</a></li>`
+  );
+}
+
+// insert next icon
+paginationItems.push(
+  `<li ><a class="cursor-pointer flex justify-center items-center w-9 h-9  ${
+    page >= pageCount && "opacity-30 cursor-default select-none"
+  }" id='pagination-item' ${
+    page < pageCount && `href=?type=${searchQuery}&page=${page + 1}`
+  }> <img  src="/dropdown-icon.svg" title="prev" height={15} width={15} loading='lazy' class="-rotate-90" decoding='async' alt="prev button"/></a></li>`
+);
+---
+
+<Layout title={"Search Result: " + searchQuery + " | MobilePriceBD"}>
+  <main class="min-h-screen w-full xl:w-[70%] px-5">
+    <!-- if record found. [i used records[0].record cause this is an array, thats why i'm chacking that if the first data exist or not] -->
+    {
+      records[0]?.record && (
+        <>
+          <h1 class="border-b-2">
+            Showing Search Results for: "{searchQuery}"
+          </h1>
+          <div class="wrapper my-5 grid grid-cols-2 md:grid-cols-4 gap-5">
+            {records &&
+              records?.map((items: any) => {
+                let record = items.record;
+
+                return (
+                  <>
+                    <div class="card border flex flex-col justify-between items-center rounded">
+                      <a href={`/${record?.slug}`} class="p-1 relative ">
+                        <Image
+                          src={record?.images.split(",")[0]}
+                          width={300}
+                          height={300}
+                          alt={`${record?.title}`}
+                          class="card-image"
+                        />
+
+                        <Image
+                          src={infoIcon}
+                          alt="info-icon"
+                          class="info-icon absolute opacity-0 top-2 right-2 z-50"
+                          height={25}
+                          width={25}
+                        />
+
+                        <div class="hover-details absolute flex flex-col select-none  pointer-events-none text-xs gap-[5px] px-2 justify-center top-0 left-0 w-full opacity-0  z-40 backdrop-blur-3xl bg-transparent">
+                          <span>
+                            <strong> Released:</strong> {record?.released}
+                          </span>
+                          <span>
+                            <strong> Display:</strong> {record?.display}
+                          </span>
+                          <span>
+                            <strong> Camera: </strong>
+                            {record?.camera}
+                          </span>
+                          <span>
+                            <strong> Battery: </strong>
+                            {record?.battery}
+                          </span>
+                          <span>
+                            <strong> OS: </strong>
+                            {record?.os}
+                          </span>
+                          <span>
+                            <strong> Ram:</strong> {record?.ram}
+                          </span>
+                        </div>
+
+                        <h2 class="title text-center hover:underline">
+                          {record?.title}
+                        </h2>
+                        {record?.official_price ? (
+                          <h3 class="price text-center  text-green-600">
+                            ৳ {record?.official_price.split("<br>")[0]}
+                          </h3>
+                        ) : record?.unofficial_price ? (
+                          <h3 class="price text-center  text-green-600">
+                            ৳ {record?.unofficial_price.split("<br>")[0]}
+                          </h3>
+                        ) : (
+                          <h3 class="price text-center  text-green-600">
+                            ৳ {record?.international_price.split("<br>")[0]}
+                          </h3>
+                        )}
+                      </a>
+                    </div>
+                  </>
+                );
+              })}
+          </div>
+
+          <div
+            id="pagination"
+            class="pagination w-full flex justify-center items-center px-20 my-10"
+          >
+            <ul
+              class="flex gap-1 items-center pagination-ul"
+              data-pagecount={pageCount}
+              set:html={paginationItems}
+            />
+          </div>
+        </>
+      )
+    }
+
+    <!-- if record not found. [i used records[0].record cause this is an array, thats why i'm chacking that if the first data exist or not] -->
+    {
+      !records[0]?.record && (
+        <>
+          <h1 class="border-b-2">No Results Found for: "{searchQuery}"</h1>
+          <div class=" w-full flex justify-center flex-col items-center mt-10">
+            <Image
+              src={notFound}
+              class="rounded-md object-contain"
+              width={300}
+              height={226}
+              alt="404-pagenot-found"
+            />
+            <p class="text-xl my-5">
+              Oops! No Results Found for: "{searchQuery}"
+            </p>
+            <a href={"/"} class="mb-10 mt-5">
+              <Button text={"Back to Home"} />
+            </a>
+          </div>
+        </>
+      )
+    }
+  </main>
+</Layout>
+
+<style lang="scss">
+  h1 {
+    font-weight: 900;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 24px;
+    color: #5f5f5f;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100px;
+      bottom: -2px;
+      left: 0;
+      background: var(--secondary-color);
+    }
+  }
+  .card {
+    &:hover {
+      .card-image {
+        transition: 0.3s;
+        scale: 1.02;
+        opacity: 0.8;
+        & ~ .info-icon {
+          opacity: 1;
+          &:hover {
+            & ~ .hover-details {
+              transition: 0.3s;
+              height: 75%;
+              opacity: 1;
+              user-select: auto;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+    }
+    .hover-details {
+      transition: 0.3s;
+      height: 0;
+    }
+    h2,
+    h3 {
+      text-align: center;
+    }
+  }
+</style>

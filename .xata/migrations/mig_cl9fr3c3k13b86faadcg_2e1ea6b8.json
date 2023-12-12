@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fr3c3k13b86faadcg",
+  "parentID": "mig_cl9fqrjprbth1akiit1g",
+  "checksum": "1:2e1ea6b89dc11d604b26a8770e4264b766dedfecac92102cf3fd8bc5131c74ba",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Pros",
+          "type": "json"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

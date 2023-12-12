@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fq4rprbth1akiisrg",
+  "parentID": "mig_cl9fq2rprbth1akiisqg",
+  "checksum": "1:87c85c51d8139aaa348184bfd17522f35ab851b02a604e25b80f1fee0c7f03e9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Bluetooth",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

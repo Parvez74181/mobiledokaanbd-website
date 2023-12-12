@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g0r3prbth1akiiv6g",
+  "parentID": "mig_cl9g0os3k13b86faae80",
+  "checksum": "1:f3ee643785445d02dfa5688a3f230d37f0a8065831eaf6bacb9025298609756b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "released",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

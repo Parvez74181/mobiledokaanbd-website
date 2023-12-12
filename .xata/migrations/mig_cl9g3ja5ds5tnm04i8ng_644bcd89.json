@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9g3ja5ds5tnm04i8ng",
+  "parentID": "mig_cl9g3i25ds5tnm04i8mg",
+  "checksum": "1:644bcd89cc66556c23750eb264dfa0bd2c27099aff573bc903aa8d2f05a560aa",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "video",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

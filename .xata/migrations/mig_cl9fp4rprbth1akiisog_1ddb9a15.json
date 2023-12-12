@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fp4rprbth1akiisog",
+  "parentID": "mig_cl9fp1q5ds5tnm04i7r0",
+  "checksum": "1:1ddb9a1563b3309bed4c18fd272b87718cf8dd2c61d3babbd11a8f8e39447f90",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Alert-types",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

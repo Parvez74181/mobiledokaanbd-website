@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fnbi5ds5tnm04i79g",
+  "parentID": "mig_cl9fna3prbth1akiirfg",
+  "checksum": "1:5d7c84642742a85addba60f1a1eac57ced9247804a4ba96052d189fac87bab65",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "SIM",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

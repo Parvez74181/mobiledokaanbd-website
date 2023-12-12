@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fmvq5ds5tnm04i78g",
+  "parentID": "mig_cl9fmti5ds5tnm04i77g",
+  "checksum": "1:76269c25ad08e79bed72a00d4cc486be910ba14f3d183efca212280b21460da8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Speed",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

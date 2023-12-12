@@ -1,0 +1,152 @@
+---
+export const prerender = true;
+import { Image } from "astro:assets";
+import contactBg from "../../public/contact-bg-svg.svg";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contact Us for Any Questions or Assistance | Contact Us | MobilePriceBD"
+>
+  <section class="pt-5 min-h-screen w-full md:w-[70%]">
+    {/* hero section */}
+    <div class="hero-section mb-10 flex justify-center items-center flex-col">
+      <h1
+        class="shadow-text max-h-[100px] text-[75px] md:text-9xl lg:text-[150px]"
+      >
+        CONTACT
+      </h1>
+
+      <div
+        class={`flex gap-5 justify-center flex-col md:flex-row items-center mx-2 md:mx-20`}
+      >
+        <Image
+          src={contactBg}
+          alt="contact-bg-svg.svg"
+          class="w-2/5 md:w-5/12"
+          height={300}
+          width={438}
+        />
+
+        <div class="w-full md:w-2/3">
+          <h1
+            class="hero-section-heading text-center text-4xl mx-5 my-5 md:text-6xl"
+          >
+            Connect With Us <br /> Your Voice Matters!
+          </h1>
+
+          <p
+            class="heading-paragraph mx-5 my-5 md:text-xl lg:w-[550px] font-light"
+          >
+            We're here to help! Reach out with any questions or feedback. We
+            value your input and will respond promptly.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class={`flex flex-col lg:flex-row justify-center items-center gap-20 pt-5`}
+    >
+      {/* contact form */}
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe1kZy2Vb3XQ1gGUb_vVLlQp290u8HzJ-ANxuLIanXYDX0Abg/viewform?embedded=true"
+        class="w-full min-h-[120vh]">Loading…</iframe
+      >
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .shadow-text {
+    color: #eeeeee;
+    font-family: "Gothic A1", sans-serif !important;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  .heading-paragraph,
+  .hero-section-heading {
+    font-family: "Gothic A1", sans-serif !important;
+  }
+  .submit-btn {
+    font-family: inherit;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border: 1px solid var(--secondary-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  .submit-btn:hover {
+    background: var(--secondary-color);
+  }
+  .submit-btn span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .submit-btn svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .submit-btn:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  .submit-btn:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+
+  .submit-btn:hover span {
+    transform: translateX(20em);
+  }
+
+  .submit-btn:active {
+    transform: scale(0.95);
+  }
+
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+
+  .contact-header {
+    font-family: "Instrument Serif", serif;
+    text-transform: uppercase;
+  }
+</style>
+
+<script defer>
+  const searchInputBox = document.querySelector("#search-input");
+  const searchIconBox = document.querySelector("#search-icon");
+
+  searchInputBox.addEventListener("keyup", (e) => {
+    searchHandler(e);
+  });
+  searchIconBox.addEventListener("click", (e) => {
+    searchHandler(e);
+  });
+
+  const searchHandler = (e) => {
+    if (e.keyCode === 13 || e.key === "Enter") {
+      let searchText = e.target.value.trim().toLowerCase();
+      if (searchText) open(`/blog/search?search=${searchText}`, "_self");
+    } else if (e.type === "click") {
+      let parentNodeItem = e.target.parentNode;
+      let searchInput = parentNodeItem.querySelector("#search-input");
+      searchInput = searchInput?.value?.trim().toLowerCase();
+      if (searchInput) open(`/blog/search?search=${searchInput}`, "_self");
+    }
+  };
+</script>

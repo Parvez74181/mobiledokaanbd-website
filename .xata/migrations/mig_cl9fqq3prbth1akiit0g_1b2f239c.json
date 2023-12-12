@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fqq3prbth1akiit0g",
+  "parentID": "mig_cl9fqns3k13b86faadbg",
+  "checksum": "1:1b2f239c8eaad83da5fdb6c4bab6c83ac05da1b29222ffb708f52a7233fd4fc3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Made-by",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

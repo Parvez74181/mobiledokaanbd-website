@@ -1,0 +1,16 @@
+{
+  "id": "mig_cl9fq6bprbth1akiissg",
+  "parentID": "mig_cl9fq4rprbth1akiisrg",
+  "checksum": "1:16a97964462d38f88cc5d7d9af459c9fb429fc1e27e4e28c3c144a1561a54693",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "GPS",
+          "type": "string"
+        },
+        "table": "mobile-info"
+      }
+    }
+  ]
+}

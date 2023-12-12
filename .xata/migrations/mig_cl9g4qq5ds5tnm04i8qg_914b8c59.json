@@ -1,0 +1,17 @@
+{
+  "id": "mig_cl9g4qq5ds5tnm04i8qg",
+  "parentID": "mig_cl9g4mjprbth1akiivog",
+  "checksum": "1:914b8c5974b191fe63b090e4eaa119b7bc5bede0ea57897a0c3880287b8c8f86",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "browser",
+          "type": "string",
+          "defaultValue": "HTML5"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}
