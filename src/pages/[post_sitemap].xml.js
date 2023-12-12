@@ -14,12 +14,14 @@ export async function GET({ request }) {
     Number(url.pathname.split(".")[0].split("/post-sitemap")[1]) || 1;
   let records;
 
-  const data = await xata.db.Posts.select(["slug", "images"]).getPaginated({
-    pagination: {
-      size: pageSize,
-      offset: (page - 1) * pageSize,
-    },
-  });
+  const data = await xata.db.Posts.sort("xata.createdAt", "desc")
+    .select(["slug", "images"])
+    .getPaginated({
+      pagination: {
+        size: pageSize,
+        offset: (page - 1) * pageSize,
+      },
+    });
 
   records = data.records;
 

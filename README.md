@@ -41,7 +41,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 - Clone the repository to your local machine using the command
 
 ```bash
-git clone https://github.com/Parvez74181/weather-app.git
+git clone https://github.com/Parvez74181/mobiledokaanbd-website.git
 ```
 
 - Run the necessary commands.
@@ -61,4 +61,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## Visit to view live website
 
-[MobilePriceBD](https://mobilepricebd.10mblogs.xyz)
+[MobilePriceBD](https://mobiledokaanbd.xyz)
