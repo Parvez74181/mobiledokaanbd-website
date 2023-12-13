@@ -1516,10 +1516,13 @@ try {
       {
         record?.highlights && (
           <div class="highlights mb-5">
-            <h1 class="text-2xl  font-bold border-b-2 inline-block my-5">
+            <h2 class="text-2xl  font-bold border-b-2 inline-block my-5">
               Highlights
-            </h1>
-            <p class="leading-8 text-justify" set:html={record?.highlights} />
+            </h2>
+            <div
+              class="leading-[2.5rem] text-justify"
+              set:html={record?.highlights}
+            />
           </div>
         )
       }
@@ -1588,7 +1591,8 @@ try {
     width: 30px;
     z-index: 3;
   }
-  h1 {
+  h1,
+  h2 {
     font-family: "Gothic A1", sans-serif !important;
     position: relative;
     padding-bottom: 10px;
