@@ -5,7 +5,6 @@ const xata = new XataClient({
 });
 
 let records;
-let totalRecords;
 
 export async function GET({ request }) {
   let { url } = request;
