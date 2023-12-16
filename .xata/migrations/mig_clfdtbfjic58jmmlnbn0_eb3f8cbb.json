@@ -1,0 +1,13 @@
+{
+  "id": "mig_clfdtbfjic58jmmlnbn0",
+  "parentID": "mig_clfdta8cjfpcgu3kau40",
+  "checksum": "1:eb3f8cbbce667995aaf3d2d560abcfef68bbe199f794e4aa0b593f7c3fa518a7",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "edge",
+        "table": "Posts"
+      }
+    }
+  ]
+}

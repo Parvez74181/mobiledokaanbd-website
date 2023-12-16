@@ -1,0 +1,17 @@
+{
+  "id": "mig_clrvcj6109gku44pprhg",
+  "parentID": "mig_clli4uq1u96tp9fu9460",
+  "checksum": "1:abf55dabe46b78826622f2be2615c86dc5a9b31ac19f6446d68f160bc13d6d25",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "visitors",
+          "type": "int",
+          "defaultValue": "0"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

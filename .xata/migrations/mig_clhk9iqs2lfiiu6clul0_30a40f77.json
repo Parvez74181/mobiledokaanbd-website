@@ -1,0 +1,17 @@
+{
+  "id": "mig_clhk9iqs2lfiiu6clul0",
+  "parentID": "mig_clhk9g2s2lfiiu6cluk0",
+  "checksum": "1:30a40f77135bdeb8470ba523d3e1d0a5efc387bac85f263a0b5bee264bb3c041",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "alert_types",
+          "type": "string",
+          "defaultValue": "SMS(threaded view), MMS, Email, Push Email, IM"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

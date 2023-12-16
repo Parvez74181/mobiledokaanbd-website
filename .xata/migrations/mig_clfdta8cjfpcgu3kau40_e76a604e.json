@@ -1,0 +1,13 @@
+{
+  "id": "mig_clfdta8cjfpcgu3kau40",
+  "parentID": "mig_cleshf0cjfpcgu3k9vm0",
+  "checksum": "1:e76a604e44a57fe88a24d2912e3ab872d39f79ae8e534e233cb3b5ab9f807c81",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "gprs",
+        "table": "Posts"
+      }
+    }
+  ]
+}

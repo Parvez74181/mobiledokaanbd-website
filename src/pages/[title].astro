@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import ok_icon from "../../public/ok_icon.svg";
 import cross_icon from "../../public/cross_icon.svg";
 import { XataClient } from "../xata";
+import { YouTube } from "@astro-community/astro-embed-youtube";
 
 const xata = new XataClient({
   apiKey: import.meta.env.XATA_API_KEY,
@@ -84,6 +85,7 @@ try {
       "slug",
       "alert_types",
       "types.id",
+      "youtube_link",
       "types.type",
       "brands.id",
       "brands.brand",
@@ -252,7 +254,15 @@ try {
         <span class="italic my-2 text-xs"
           >*Some prices may not be up to date according to today’s latest price.
           Additional VAT may be applicable</span
-        >
+        ><br /><br />
+        {
+          record?.youtube_link && (
+            <>
+              <YouTube id={record?.youtube_link} />
+              <br />
+            </>
+          )
+        }
       </div>
 
       <div class="w-full xl:ms-5 md:w-1/2 feature-info-list-container">
@@ -1519,10 +1529,7 @@ try {
             <h2 class="text-2xl  font-bold border-b-2 inline-block my-5">
               Highlights
             </h2>
-            <div
-              class="leading-[2.5rem] text-justify"
-              set:html={record?.highlights}
-            />
+            <div class="leading-[2.5rem]" set:html={record?.highlights} />
           </div>
         )
       }
@@ -1530,6 +1537,14 @@ try {
   </main>
 </Layout>
 <style lang="scss">
+  .highlights {
+    div {
+      h2,
+      h3 {
+        margin: 10px 0 !important;
+      }
+    }
+  }
   .breadcrumb {
     svg {
       height: 12px !important;
@@ -1591,8 +1606,7 @@ try {
     width: 30px;
     z-index: 3;
   }
-  h1,
-  h2 {
+  h1 {
     font-family: "Gothic A1", sans-serif !important;
     position: relative;
     padding-bottom: 10px;

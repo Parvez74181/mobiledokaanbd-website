@@ -98,14 +98,6 @@ declare const tables: readonly [
         readonly type: "string";
       },
       {
-        readonly name: "gprs";
-        readonly type: "string";
-      },
-      {
-        readonly name: "edge";
-        readonly type: "string";
-      },
-      {
         readonly name: "dimensions";
         readonly type: "string";
       },
@@ -183,10 +175,6 @@ declare const tables: readonly [
       },
       {
         readonly name: "video";
-        readonly type: "string";
-      },
-      {
-        readonly name: "alert_types";
         readonly type: "string";
       },
       {
@@ -282,19 +270,6 @@ declare const tables: readonly [
         };
       },
       {
-        readonly name: "meta_description";
-        readonly type: "text";
-      },
-      {
-        readonly name: "meta_tags";
-        readonly type: "text";
-      },
-      {
-        readonly name: "visitors";
-        readonly type: "int";
-         readonly defaultValue: 0;
-      },
-      {
         readonly name: "pros";
         readonly type: "text";
       },
@@ -332,6 +307,20 @@ declare const tables: readonly [
       },
       {
         readonly name: "slug";
+        readonly type: "string";
+      },
+      {
+        readonly name: "alert_types";
+        readonly type: "string";
+        readonly defaultValue: "SMS(threaded view), MMS, Email, Push Email, IM";
+      },
+      {
+        readonly name: "visitors";
+        readonly type: "int";
+        readonly defaultValue: "0";
+      },
+      {
+        readonly name: "youtube_link";
         readonly type: "string";
       }
     ];

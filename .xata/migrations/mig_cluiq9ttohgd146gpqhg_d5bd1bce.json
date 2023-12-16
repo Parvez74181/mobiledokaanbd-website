@@ -1,0 +1,16 @@
+{
+  "id": "mig_cluiq9ttohgd146gpqhg",
+  "parentID": "mig_clrvcj6109gku44pprhg",
+  "checksum": "1:d5bd1bce1d3c7ffac8b579d9c6b5168b6165c4b82b8ce64b231006749ad4c60f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "youtube_link",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

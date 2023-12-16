@@ -21,7 +21,7 @@ try {
   const dataPromise = xata.db.Posts.filter({
     price_range: { $iContains: price },
   })
-    .sort("xata.updatedAt", "desc")
+    .sort("xata.createdAt", "desc")
     .select([
       "id",
       "title",
