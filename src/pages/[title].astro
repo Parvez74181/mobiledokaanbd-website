@@ -1538,8 +1538,6 @@ try {
       }
     </div>
   </main>
-
-  {norecord && <span data-norecord={`${norecord}`} id="norecordspan" />}
 </Layout>
 
 <style lang="scss">
@@ -1678,7 +1676,7 @@ try {
 <script async defer>
   window.addEventListener("load", function () {
     const thumbnail = document.querySelector("#thumbnail");
-    const norecordspan = document.querySelector("#norecordspan");
+
     const imgExtendIcon = document.querySelector(".img-extend");
 
     const fullScreenImgContainer = document.querySelector(
@@ -1691,12 +1689,6 @@ try {
     const progressBar = document.querySelector("#progress-bar");
 
     const counterElement = document.querySelector(".progress-number-container");
-
-    if (
-      norecordspan.dataset.norecord === "true" ||
-      norecordspan.dataset.norecord === true
-    )
-      this.location.href = "/404";
 
     // image clickable function
     sub_images.forEach((img) => {
