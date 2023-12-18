@@ -4,7 +4,9 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ok_icon from "../../public/ok_icon.svg";
 import cross_icon from "../../public/cross_icon.svg";
+
 import { XataClient } from "../xata";
+
 import { YouTube } from "@astro-community/astro-embed-youtube";
 
 const xata = new XataClient({
@@ -14,7 +16,7 @@ const xata = new XataClient({
 
 let record: any;
 const record_slug = Astro.url.pathname.split("/")[1];
-
+let norecord = false;
 try {
   record = await xata.db.Posts.filter({ slug: record_slug })
     .select([
@@ -95,6 +97,7 @@ try {
   await xata.db.Posts.update(record?.id, { visitors: { $increment: 1 } });
 } catch (error) {
   console.log(error);
+  norecord = true;
 }
 ---
 
@@ -1535,7 +1538,10 @@ try {
       }
     </div>
   </main>
+
+  {norecord && <span data-norecord={`${norecord}`} id="norecordspan" />}
 </Layout>
+
 <style lang="scss">
   .highlights {
     div {
@@ -1672,6 +1678,7 @@ try {
 <script async defer>
   window.addEventListener("load", function () {
     const thumbnail = document.querySelector("#thumbnail");
+    const norecordspan = document.querySelector("#norecordspan");
     const imgExtendIcon = document.querySelector(".img-extend");
 
     const fullScreenImgContainer = document.querySelector(
@@ -1684,6 +1691,12 @@ try {
     const progressBar = document.querySelector("#progress-bar");
 
     const counterElement = document.querySelector(".progress-number-container");
+
+    if (
+      norecordspan.dataset.norecord === "true" ||
+      norecordspan.dataset.norecord === true
+    )
+      this.location.href = "/404";
 
     // image clickable function
     sub_images.forEach((img) => {
