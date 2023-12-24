@@ -3,6 +3,7 @@ export const prerender = true;
 import { Image } from "astro:assets";
 import Logo from "../../public/logo.svg";
 import { XataClient } from "../xata";
+import ClickImage from "../../public/click-here.jpg";
 
 const xata = new XataClient({
   apiKey: import.meta.env.XATA_API_KEY,
@@ -271,6 +272,12 @@ try {
             >
           </li>
         </ul>
+        <a
+          href="https://www.toprevenuegate.com/dcickmavc?key=0c017be552f7eb299754dc962afa492a"
+          class="relative z-50 scale-90"
+        >
+          <Image src={ClickImage} alt="click" height={50} width={200} /></a
+        >
       </div>
     </div>
   </div>

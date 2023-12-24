@@ -372,6 +372,20 @@ try {
                 }</span
               >
             </div>
+            <script async defer type="text/javascript">
+              atOptions = {
+                key: "49387e377422e5f52df7259ceddf4f6f",
+                format: "iframe",
+                height: 50,
+                width: 50,
+                params: {},
+              };
+              document.write(
+                "<scr" +
+                  'ipt type="text/javascript" src="//www.topcreativeformat.com/49387e377422e5f52df7259ceddf4f6f/invoke.js"></scr' +
+                  "ipt>"
+              );
+            </script>
           </div>
         </div>
 
@@ -1471,84 +1485,93 @@ try {
             </tr>
           </tbody>
         </table>
+
+        <!-- pros and cons -->
+        <div
+          class="pros-and-cons w-full grid md:grid-cols-2 grid-cols-1 gap-5 my-5"
+        >
+          <!-- pros -->
+          <div class="pros text-left w-full">
+            <h2 class="border bg-green-800 text-white tracking-wider p-2">
+              Pros
+            </h2>
+
+            {
+              record?.pros.split("<br>").map((item: any) => {
+                return (
+                  <div class="p-2 border">
+                    <Image
+                      src={ok_icon}
+                      alt="ok icon"
+                      height="20"
+                      width="20"
+                      class="inline-block"
+                    />{" "}
+                    {item.trim()}
+                    <br />
+                  </div>
+                );
+              })
+            }
+          </div>
+
+          <!-- cons -->
+          <div class="cons text-left w-full">
+            <h2 class="border bg-red-600 text-white tracking-wider p-2">
+              Cons
+            </h2>
+
+            {
+              record?.cons.split("<br>").map((item: any) => {
+                return (
+                  <div class="p-2 border">
+                    <Image
+                      src={cross_icon}
+                      alt="cross icon"
+                      height="20"
+                      width="20"
+                      class="inline-block"
+                    />{" "}
+                    {item.trim()}
+                    <br />
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+        <!-- highlights -->
+        {
+          record?.highlights && (
+            <div class="highlights mb-5">
+              <h2 class="text-2xl  font-bold border-b-2 inline-block my-5">
+                Highlights
+              </h2>
+              <article class="leading-[2rem]" set:html={record?.highlights} />
+            </div>
+          )
+        }
       </table>
 
-      <!-- pros and cons -->
-      <div
-        class="pros-and-cons w-full grid md:grid-cols-2 grid-cols-1 gap-5 my-5"
-      >
-        <!-- pros -->
-        <div class="pros text-left w-full">
-          <h2 class="border bg-green-800 text-white tracking-wider p-2">
-            Pros
-          </h2>
-
-          {
-            record?.pros.split("<br>").map((item: any) => {
-              return (
-                <div class="p-2 border">
-                  <Image
-                    src={ok_icon}
-                    alt="ok icon"
-                    height="20"
-                    width="20"
-                    class="inline-block"
-                  />{" "}
-                  {item.trim()}
-                  <br />
-                </div>
-              );
-            })
-          }
-        </div>
-
-        <!-- cons -->
-        <div class="cons text-left w-full">
-          <h2 class="border bg-red-600 text-white tracking-wider p-2">Cons</h2>
-
-          {
-            record?.cons.split("<br>").map((item: any) => {
-              return (
-                <div class="p-2 border">
-                  <Image
-                    src={cross_icon}
-                    alt="cross icon"
-                    height="20"
-                    width="20"
-                    class="inline-block"
-                  />{" "}
-                  {item.trim()}
-                  <br />
-                </div>
-              );
-            })
-          }
-        </div>
-      </div>
-      <!-- highlights -->
-      {
-        record?.highlights && (
-          <div class="highlights mb-5">
-            <h2 class="text-2xl  font-bold border-b-2 inline-block my-5">
-              Highlights
-            </h2>
-            <div class="leading-[2.5rem]" set:html={record?.highlights} />
-          </div>
-        )
-      }
+      <script async defer type="text/javascript">
+        atOptions = {
+          key: "49387e377422e5f52df7259ceddf4f6f",
+          format: "iframe",
+          height: 50,
+          width: 320,
+          params: {},
+        };
+        document.write(
+          "<scr" +
+            'ipt type="text/javascript" src="//www.topcreativeformat.com/49387e377422e5f52df7259ceddf4f6f/invoke.js"></scr' +
+            "ipt>"
+        );
+      </script>
     </div>
   </main>
 </Layout>
 
 <style lang="scss">
-  .highlights {
-    div {
-      h2,
-      h3 {
-        margin: 10px 0 !important;
-      }
-    }
-  }
   .breadcrumb {
     svg {
       height: 12px !important;
