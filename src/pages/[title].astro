@@ -1544,7 +1544,7 @@ try {
         {
           record?.highlights && (
             <div class="highlights mb-5">
-              <h2 class="text-2xl  font-bold border-b-2 inline-block my-5">
+              <h2 class="text-3xl  font-bold border-b-2 block my-5">
                 Highlights
               </h2>
               <article class="leading-[2rem]" set:html={record?.highlights} />
@@ -1709,9 +1709,19 @@ try {
       ".full-screen-img-container .close-icon"
     );
     const sub_images = document.querySelectorAll(".imgs");
+    const highlights_spans = document.querySelectorAll(".highlights span");
+    const highlights_h3 = document.querySelectorAll(".highlights h3");
     const progressBar = document.querySelector("#progress-bar");
 
     const counterElement = document.querySelector(".progress-number-container");
+
+    highlights_spans.forEach((span) => {
+      span.removeAttribute("style");
+    });
+
+    highlights_h3.forEach((h3) => {
+      h3.classList.add("text-2xl");
+    });
 
     // image clickable function
     sub_images.forEach((img) => {
